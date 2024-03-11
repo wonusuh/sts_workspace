@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Mar 2024 12:46:08 GMT</lastBuildDate><item><title><![CDATA[A Bootiful Podcast: Cristian Schuszter on CERN]]></title><link>https://spring.io/blog/2024/03/07/a-bootiful-podcast-cristian-schuszter-on-cern</link><guid isPermaLink="true">https://spring.io/blog/2024/03/07/a-bootiful-podcast-cristian-schuszter-on-cern</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Thu, 07 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this installment I talk to Cristian Schuszter, a software engineer at CERN. (This episode was recorded live at VOXXED DAYS CERN!).&lt;/p&gt;
+&lt;p&gt;Don&apos;t forget to help us out with the &lt;a href=&quot;https://dimensionalresearch.co1.qualtrics.com/jfe/form/SV_eL0aSP7GSnporTE&quot;&gt;State of Spring Survey&lt;/a&gt;&lt;/p&gt;
+&lt;iframe title=&quot;Cristian Schuszter on CERN&quot; allowtransparency=&quot;true&quot; height=&quot;150&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:150px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?i=y3td2-15a3291-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=7&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Function Calling in Java and Spring AI using the latest Mistral AI API]]></title><link>https://spring.io/blog/2024/03/06/function-calling-in-java-and-spring-ai-using-the-latest-mistral-ai-api</link><guid isPermaLink="true">https://spring.io/blog/2024/03/06/function-calling-in-java-and-spring-ai-using-the-latest-mistral-ai-api</guid><dc:creator><![CDATA[Christian Tzolov]]></dc:creator><pubDate>Wed, 06 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Mistral AI, a leading developer of open-source large language models, &lt;a href=&quot;https://docs.mistral.ai/guides/function-calling/&quot;&gt;unveiled&lt;/a&gt; the addition of &lt;strong&gt;Function Calling&lt;/strong&gt; support to its cutting-edge models.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Function Calling&lt;/strong&gt; is a feature that facilitates the integration of LLM with external tools and APIs.
+It enables the language model to request the execution of client-side functions, allowing it to access necessary run-time information or perform tasks dynamically.?&lt;/p&gt;
+&lt;p&gt;Here, I&apos;ll discuss using Mistral AI&apos;s new Function Calling features with Java and particularly with &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/0.8-SNAPSHOT/index.html&quot;&gt;Spring AI&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you&apos;re not keen on delving into the details of the low-level Java client and want to make the most of your investment, feel free to skip the next paragraph and jump straight into the &lt;a href=&quot;#fc-with-spring-ai&quot;&gt;Function Calling with Spring AI&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;1-function-calling-in-java&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-function-calling-in-java&quot; aria-label=&quot;1 function calling in java permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Function Calling in Java&lt;/h1&gt;
+&lt;p&gt;If you want to test out the latest Mistral AI features using Java and &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/0.8-SNAPSHOT/index.html&quot;&gt;Spring AI&lt;/a&gt;, you will find that Mistral doesn&apos;t support Java clients and hasn&apos;t released the Function Calling API yet.&lt;/p&gt;
+&lt;p&gt;Consequently, I had to resort exploring their JavaScript/Python clients to to figure it out.
+Below, is a class diagram illustrating the various components of the API and their interconnections.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;//images.ctfassets.net/mnrwi97vnhts/15QfGErEgkazUvnOcAb3xz/1b6ccac2b033bafe75578fa1574cd63b/Spring_AI__11_.jpg&quot; alt=&quot;Mistral AI Class Diagram 1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Those familiar with the OpenAI API will notice that Mistral AI&apos;s new API is almost the same, with just a few small differences.
+However, there&apos;s one important limitation: At the time of writing this blog, &lt;strong&gt;Mistral AI does not support parallel function calls&lt;/strong&gt;, setting it apart from the latest LLM models offered by OpenAI, Azure OpenAI, and Vertex AI Gemini.&lt;/p&gt;
+&lt;p&gt;I&apos;ve extended the &lt;a href=&quot;https://github.com/spring-projects/spring-ai/blob/main/models/spring-ai-mistral-ai/src/main/java/org/springframework/ai/mistralai/api/MistralAiApi.java&quot;&gt;MistralAiApi&lt;/a&gt;  Java client, originally created by Ricken Bazolo, to include the missing Function Calling features.
+The updated client works well, as demonstrated by the &lt;a href=&quot;https://github.com/spring-projects/spring-ai/blob/main/models/spring-ai-mistral-ai/src/test/java/org/springframework/ai/mistralai/api/tool/PaymentStatusFunctionCallingIT.java&quot;&gt;Payment Status demo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since my focus is on Spring AI, I won&apos;t delve into the technical intricacies of the client here. However, if you&apos;re interested, you can explore the demo code and the cheat sheet diagram I&apos;ve included below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;//images.ctfassets.net/mnrwi97vnhts/20ZVq46V0ANAOaDGB72X2d/6c173d646298cff448d80caa887a9bcb/Spring_AI__33_.jpg&quot; alt=&quot;Mistral AI Function Calling Flow Diagram - 3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;It&apos;s important to note that the model doesn&apos;t directly call the function; rather, it generates JSON for you to call the function in your code and return the result to the model to continue the conversation.&lt;/p&gt;
+&lt;h1 id=&quot;a-namefc-with-spring-ai2-function-calling-with-spring-aia&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#a-namefc-with-spring-ai2-function-calling-with-spring-aia&quot; aria-label=&quot;a namefc with spring ai2 function calling with spring aia permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a name=&quot;fc-with-spring-ai&quot;&gt;2. Function Calling with Spring AI&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Spring AI simplifies Function Calling by allowing you to define a &lt;code&gt;@Bean&lt;/code&gt; that returns a user-defined &lt;code&gt;java.util.Function&lt;/code&gt;. It automatically infers the Function¡¯s input type and generates JSON (or Open API) schema accordingly. Moreover, Spring AI takes care of the complex interactions with the AI Model by wrapping your POJO (the function) with the necessary adapter code, eliminating the need for you to write repetitive code.&lt;/p&gt;
+&lt;p&gt;Furthermore, the Spring AI simplifies the code portability to other AI models that support Function Calling and allows the development of efficient, native (GraalVM) executables.&lt;/p&gt;
+&lt;h2 id=&quot;21-how-does-it-work&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#21-how-does-it-work&quot; aria-label=&quot;21 how does it work permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.1 How does it work?&lt;/h2&gt;
+&lt;p&gt;Suppose we want the AI model to respond with information that it does not have.
+For example the status of your recent payment transactions as shown in this Mistral AI &lt;a href=&quot;https://docs.mistral.ai/guides/function-calling&quot;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Lets re-implement the tutorial with Spring AI.&lt;/p&gt;
+&lt;p&gt;Bootstrap a new Boot application using the &lt;a href=&quot;https://start.spring.io&quot;&gt;Initializr&lt;/a&gt; and add the MistralAI boot starter dependency to the POM:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;#x3C;dependency&gt;
+    &amp;#x3C;groupId&gt;org.springframework.ai&amp;#x3C;/groupId&gt;
+    &amp;#x3C;artifactId&gt;spring-ai-mistral-ai-spring-boot-starter&amp;#x3C;/artifactId&gt;
+    &amp;#x3C;version&gt;0.8.1-SNAPSHOT&amp;#x3C;/version&gt;
+&amp;#x3C;/dependency&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Use the &lt;code&gt;application.properties&lt;/code&gt; to configure it:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;spring.ai.mistralai.api-key=${MISTRAL_AI_API_KEY}
+spring.ai.mistralai.chat.options.model=mistral-small-latest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will provide you with fully functional &lt;code&gt;MistralAiChatClient&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Autowired
+MistralAiChatClient chatClient;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next let¡¯s assume we have a dataset consisting of payment transactions:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public record Transaction(String transactionId) {}
+
+public record Status(String status) {}
+
+public static final Map&amp;#x3C;Transaction, Status&gt; PAYMENT_DATA = Map.of(
+            new Transaction(&quot;T1001&quot;), new Status(&quot;Paid&quot;),
+            new Transaction(&quot;T1002&quot;), new Status(&quot;Unpaid&quot;),
+            new Transaction(&quot;T1003&quot;), new Status(&quot;Paid&quot;),
+            new Transaction(&quot;T1004&quot;), new Status(&quot;Paid&quot;),
+            new Transaction(&quot;T1005&quot;), new Status(&quot;Pending&quot;));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Users can ask questions about this dataset and use function calling to answer them.
+For example, let¡¯s consider a function that retrieves the payment status given a transaction:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Bean
+@Description(&quot;Get payment status of a transaction&quot;)
+public Function&amp;#x3C;Transaction, Status&gt; retrievePaymentStatus() {
+        return (transaction) -&gt; new Status(PAYMENT_DATA.get(transaction).status());
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It uses a plain &lt;code&gt;java.util.Function&lt;/code&gt; that takes a &lt;code&gt;Transaction&lt;/code&gt; as an input and returns the &lt;code&gt;Status&lt;/code&gt; for that transaction.
+Function is registered as &lt;code&gt;@Bean&lt;/code&gt; and uses the &lt;code&gt;@Description&lt;/code&gt; annotation to define function description.
+Spring AI greatly simplifies code you need to write to support function invocation.
+It brokers the function invocation conversation for you.
+You can also reference multiple function bean names in your prompt.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;var options = MistralAiChatOptions.builder()
+   .withFunction(&quot;retrievePaymentStatus&quot;)
+   .build();
+
+ChatResponse paymentStatusResponse = chatClient.call(
+      new Prompt(&quot;What&apos;s the status of my transaction with id T1005?&quot;,  options);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We formulate the question within the prompt, including the associated function name in the prompt&apos;s options.
+The function name should match the Bean name.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TIP&lt;/strong&gt;: Rather than repeatedly specifying the function name in prompt options for each request, you can consider configuring it once in the &lt;code&gt;application.properties&lt;/code&gt; file like: &lt;code&gt;spring.ai.mistralai.chat.options.functions=retrievePaymentStatus&lt;/code&gt;. This approach ensures the function is consistently enabled and accessible for all prompt questions. However, it&apos;s important to note that this method may result in the transmission of unnecessary context tokens for requests that do not require the function.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That¡¯s it.
+Spring AI will facilitate the conversation for function invocation on your behalf.
+You can print the response content:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;System.out.println(paymentStatusResponse.getResult().getOutput().getContent());
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and expect a result like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;The status of your transaction T1005 is &quot;Pending&quot;.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;TIP&lt;/strong&gt;: Check the &lt;strong&gt;&lt;a href=&quot;https://github.com/tzolov/spring-ai-aot-tests/tree/main/mistralai-aot-demo&quot;&gt;MistralAi-AOT-Demo&lt;/a&gt;&lt;/strong&gt;, a simple, Spring Boot application showcasing the integration of Mistral AI with Spring AI. It encompasses various functionalities such as chat completion, streaming chat completion, embedding, and function calling. Additionally, instructions for native builds are included.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Explore further details about the integration of Spring AI with Mistral AI in the reference documentation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/0.8-SNAPSHOT/api/clients/mistralai-chat.html&quot;&gt;Mistral AI Chat Client&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/0.8-SNAPSHOT/api/clients/functions/mistralai-chat-functions.html&quot;&gt;Mistral AI Function Calling&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;22-dynamic-prompt-options&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#22-dynamic-prompt-options&quot; aria-label=&quot;22 dynamic prompt options permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.2 Dynamic Prompt Options&lt;/h2&gt;
+&lt;p&gt;With &lt;strong&gt;MistralAiChatOptions&lt;/strong&gt;, we can customize the default settings for each prompt request. For instance, we can switch the model to LARGE and adjust the temperature for a specific request as needed.:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;ChatResponse paymentStatusResponse = chatClient
+   .call(new Prompt(&quot;What&apos;s the status of my transaction with id T1005?&quot;,
+            MistralAiChatOptions.builder()
+               .withModel(MistralAiApi.ChatModel.LARGE.getValue())
+               .withTemperature(0.6f)
+               .withFunction(&quot;retrievePaymentStatus&quot;)
+               .build()));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Check the &lt;a href=&quot;https://github.com/spring-projects/spring-ai/blob/main/models/spring-ai-mistral-ai/src/main/java/org/springframework/ai/mistralai/MistralAiChatOptions.java&quot;&gt;MistralAiChatOptions&lt;/a&gt; javadocs for the available options.&lt;/p&gt;
+&lt;h2 id=&quot;23-code-portability&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#23-code-portability&quot; aria-label=&quot;23 code portability permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.3 Code Portability&lt;/h2&gt;
+&lt;p&gt;Porting the code to other models supporting function calling is straightforward. For instance, to transition the code from using Mistral AI to Azure OpenAI, follow these steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Replace the &lt;code&gt;spring-ai-mistral-ai-spring-boot-starter&lt;/code&gt; dependency with &lt;code&gt;spring-ai-azure-openai-spring-boot-starter&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Adjust the &lt;code&gt;application.properties&lt;/code&gt; file:
+&lt;pre&gt;&lt;code&gt;spring.ai.azure.openai.api-key=${AZURE_OPENAI_API_KEY}
+spring.ai.azure.openai.endpoint=${AZURE_OPENAI_ENDPOINT}
+spring.ai.azure.openai.chat.options.model=gpt-35-turbo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Rename the &lt;code&gt;MistralAiChatOptions&lt;/code&gt; class to &lt;code&gt;AzureOpenAiChatOptions&lt;/code&gt; (this renaming may become unnecessary in future Spring AI versions).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Currently, Spring AI offers function calling code portability between the following platforms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/0.8-SNAPSHOT/api/clients/functions/openai-chat-functions.html&quot;&gt;Spring AI Open AI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/0.8-SNAPSHOT/api/clients/functions/vertexai-gemini-chat-functions.html&quot;&gt;Spring AI Vertex AI Gemini&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/0.8-SNAPSHOT/api/clients/functions/azure-open-ai-chat-functions.html&quot;&gt;Spring AI Azure OpenAI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/0.8-SNAPSHOT/api/clients/functions/mistralai-chat-functions.html&quot;&gt;Spring AI Mistral AI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;a href=&quot;https://github.com/tzolov/spring-ai-function-calling-portability&quot;&gt;Spring-AI-Function-Calling-Portability&lt;/a&gt; sample application, demonstrates how you can re-use the same code and the same functions across multiple AI models.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: At the moment Mistral AI does not provide parallel function calling support.&lt;/p&gt;
+&lt;h1 id=&quot;3-build-native-graalvm-execution&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-build-native-graalvm-execution&quot; aria-label=&quot;3 build native graalvm execution permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Build Native (GraalVM) Execution&lt;/h1&gt;
+&lt;p&gt;For building a native image you need to install a &lt;a href=&quot;https://www.graalvm.org/downloads/&quot;&gt;GrallVM 21 JDK&lt;/a&gt; and runt the following maven command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;./mvnw clean install -Pnative native:compile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It may take a couple of minutes to complete.
+Then you can run the native executable:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;./target/mistralai-aot-demo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;4-conclusions&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#4-conclusions&quot; aria-label=&quot;4 conclusions permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;4. Conclusions&lt;/h1&gt;
+&lt;p&gt;In this blog post we explore the Mistral AI Function Calling features in conjunction with Java and Spring AI.&lt;/p&gt;
+&lt;p&gt;The focus is on leveraging Function Calling with Spring AI, a framework that streamlines the integration process by handling the complexities of interaction with AI models, facilitating code portability and the development of efficient, native (GraalVM) executables.&lt;/p&gt;
+&lt;p&gt;Key points covered include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Overview of Function Calling with Spring AI, including demos and code examples.&lt;/li&gt;
+&lt;li&gt;Explain the dynamic Prompt Options and Code Portability across different AI models supported by Spring AI.&lt;/li&gt;
+&lt;li&gt;Building Native (GraalVM) Execution for enhanced performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The blog provides links to relevant documentation and demos, offering readers further exploration into Function Calling capabilities and code portability across different language model providers.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring Tips: the Spring Authorization Server: durability of data]]></title><link>https://spring.io/blog/2024/03/06/spring-tips-the-spring-authorization-server-durability-of-data</link><guid isPermaLink="true">https://spring.io/blog/2024/03/06/spring-tips-the-spring-authorization-server-durability-of-data</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Wed, 06 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this installment, we continue our look at the venerable Spring Authorization Server, this time looking at how to configure persistence and durability for various aspects of the system&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/GVsKQ4dp_pQ?si=6_sbwp8qKn-ZLo9o&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[The State of Spring Survey Is Back!]]></title><link>https://spring.io/blog/2024/03/05/the-state-of-spring-survey-is-back</link><guid isPermaLink="true">https://spring.io/blog/2024/03/05/the-state-of-spring-survey-is-back</guid><dc:creator><![CDATA[Michael Minella]]></dc:creator><pubDate>Tue, 05 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We are excited to announce the State of Spring Survey! Make sure your voice is heard by heading over to &lt;a href=&quot;https://spring.io/survey&quot; title=&quot;State of Spring Survey&quot;&gt;https://spring.io/survey&lt;/a&gt; and give us your feedback!&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Are you excited to use virtual threads? Is AI all hype or is it game changing? What would you change about Spring if you could? (&lt;a href=&quot;https://github.com/spring-projects/spring-boot/blob/main/CONTRIBUTING.adoc&quot;&gt;You can&lt;/a&gt;, by the way.)&lt;/p&gt;
+&lt;p&gt;The State of Spring survey is back! Last time we learned that 90% of respondents were looking forward to virtual threads through Project Loom. We learned that building APIs was still the main use case for Spring applications, with plain JSON over HTTP as the number one type of API. We also learned that native compilation with GraalVM was beginning to cool off a bit from its high point in popularity. What will we learn this year?&lt;/p&gt;
+&lt;p&gt;We are excited to hear from you, our community, on what matters in your use of Spring. Completing the survey should take about 15 minutes. If you want to be among the first to get the report, feel free to leave your email at the end of the survey.&lt;/p&gt;
+&lt;p&gt;Finally, we would like to ask for your help. We want to be sure as many members of the community as possible are heard. Please share the link &lt;a href=&quot;https://spring.io/survey&quot; title=&quot;State of Spring Survey&quot;&gt;https://spring.io/survey&lt;/a&gt; or our &lt;a href=&quot;https://twitter.com/springcentral/status/1765075456674631831&quot;&gt;Twitter/X&lt;/a&gt; and &lt;a href=&quot;https://www.linkedin.com/feed/update/urn:li:activity:7170842814371602434?utm_source=share&amp;#x26;utm_medium=member_desktop&quot;&gt;LinkedIn&lt;/a&gt; posts.&lt;/p&gt;
+&lt;p&gt;Thank you!&lt;/p&gt;
+&lt;p&gt;The Spring Team&lt;/p&gt;</content:encoded></item><item><title><![CDATA[This Week in Spring - March 5th, 2024]]></title><link>https://spring.io/blog/2024/03/05/this-week-in-spring-march-5th-2024</link><guid isPermaLink="true">https://spring.io/blog/2024/03/05/this-week-in-spring-march-5th-2024</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Tue, 05 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! Welcome to another exciting roundup of &lt;em&gt;This Week in Spring&lt;/em&gt;! I expect many of you are reading this for the first time, especially with Facebook and Instagram being down. People have been exploring all the other lesser-known corners of the web, looking for their daily &quot;doom scroll.&quot; Well, you won&apos;t find that here, no way, no how! There are no memes here. Well, not often, anyway. No, this is a place for personal growth, reflection, and contemplation on the latest and greatest in the wild and wonderful world of Spring.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I did an article for The New Stack looking at the New Relic Developer Survey report: &lt;a href=&quot;https://thenewstack.io/we-can-have-nice-things-upgrading-to-java-21-is-worth-it/&quot;&gt;We &lt;em&gt;Can&lt;/em&gt; Have Nice Things&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Our very own Jason Konicki has a &lt;a href=&quot;https://spring.io/blog/2024/03/04/spring-releases-for-february-2024&quot;&gt;fabulous post about the amazing Spring projects that were released in February&lt;/a&gt; - there are a &lt;em&gt;ton&lt;/em&gt;! Check them out!&lt;/li&gt;
+&lt;li&gt;The Spring Framework lead has a nice blog detailing the expected support timeline for Spring Framework &lt;a href=&quot;https://spring.io/blog/2024/03/01/support-timeline-announcement-for-spring-framework-6-0-x-and-5-3-x&quot;&gt;6.0x and 5.3x, both of which are at least a year old already&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Spring Integration lead Artem Bilan has a nice post introducing &lt;a href=&quot;https://spring.io/blog/2024/03/01/spring-functions-catalog-5-0-0-m1-available&quot;&gt;the Spring Functions Catalog&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In last week&apos;s episode of &lt;a href=&quot;https://bit.ly/spring-tips-playlist&quot;&gt;&lt;em&gt;Spring Tips&lt;/em&gt;&lt;/a&gt;, I continued our series introducing the Spring Authorization Server, this time applying it to support and secure single-page applications and messaging flows. Stay tuned for the last installment, &lt;a href=&quot;https://www.youtube.com/watch?v=GVsKQ4dp_pQ&quot;&gt;landing tomorrow - Wednesday, the 6th of March, 2024&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;Use Spring AI &lt;a href=&quot;https://twitter.com/christzolov/status/1764671164964565267?s=61&amp;#x26;t=crDvmX_wa2d4Zm2XKzcsAg&quot;&gt;to get function-portability across LLMs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;This is an old curio I just discovered that has &lt;em&gt;zero&lt;/em&gt; future, but I think is kind of interesting nonetheless: would you like to use the Java HTTP Server (the one included in the JDK) as a Spring Boot &lt;code&gt;WebServer&lt;/code&gt;? This old codebase from around 2019 shows how. It, alas, does &lt;em&gt;not&lt;/em&gt; work well if you update it because there&apos;s been an &lt;em&gt;en masse&lt;/em&gt; migration from Java EE to Jakarta EE since then that breaks a lot of the code.&lt;/li&gt;
+&lt;li&gt;Want to rotate SSL certificates with Spring Boot on a Kubernetes platform like OpenShift? &lt;a href=&quot;https://piotrminkowski.com/2024/03/04/rotate-ssl-certificates-with-openshift-and-spring-boot/&quot;&gt;Check out this blog&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Currently in Spring Modulith 1.2 snapshots, &lt;a href=&quot;https://twitter.com/odrotbohm/status/1763179338856374529?s=21&amp;#x26;t=dQfH_W59fQfA1gNoe2tCPg&quot;&gt;there&apos;s a new feature called open application modules&lt;/a&gt;. Neat!&lt;/li&gt;
+&lt;li&gt;I like this German-language article &lt;a href=&quot;https://www.innoq.com/de/blog/2024/02/ollama-llm-spring-ai-rag/&quot;&gt;on using a local LLM (Ollama) with Spring AI&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Friend of the community Marit van Dijk has a nice blog, &lt;a href=&quot;https://www.innoq.com/de/blog/2024/02/ollama-llm-spring-ai-rag/&quot;&gt;&lt;em&gt;Build a Spring Boot App with AI Assistant&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;This paper, &lt;a href=&quot;https://arxiv.org/pdf/2401.11867.pdf&quot;&gt;&lt;em&gt;Modular Monolith: Is This the Trend in Software Architecture?&lt;/em&gt;&lt;/a&gt;, is a good read and has a few different mentions of the fantastic &lt;a href=&quot;https://spring.io/projects/spring-modulith&quot;&gt;Spring Modulith project&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Spring Releases for February 2024]]></title><link>https://spring.io/blog/2024/03/04/spring-releases-for-february-2024</link><guid isPermaLink="true">https://spring.io/blog/2024/03/04/spring-releases-for-february-2024</guid><dc:creator><![CDATA[Jason Konicki]]></dc:creator><pubDate>Mon, 04 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the Spring team, we are excited to showcase all of the Spring projects that have been released this February.&lt;/p&gt;
+&lt;h2 id=&quot;spring-oss-releases&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-oss-releases&quot; aria-label=&quot;spring oss releases permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring OSS Releases&lt;/h2&gt;
+&lt;p&gt;The table below contains a list of all the open source projects and their versions that have been released.  Each project listed will link to their version details.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Project&lt;/th&gt;
+&lt;th&gt;Version(s)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring AI&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/23/spring-ai-0-8-0-released&quot;&gt;0.8.0&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring for Apache Kafka&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/20/spring-for-apache-kafka-3-0-14-3-1-2-and-3-2-0-m1-available-now&quot;&gt;3.2.0-M1, 3.1.2, 3.0.14&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring for Apache Pulsar&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-for-apache-pulsar-1-1-0-m1-available-now&quot;&gt;1.1.0-M1&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/20/spring-for-apache-pulsar-1-0-3-available-now&quot;&gt;1.0.3&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Authorization Server&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-authorization-server-1-3-0-m2-available-now&quot;&gt;1.3.0-M2&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-authorization-server-1-2-2-and-1-1-5-available-now&quot;&gt;1.2.2, 1.1.5&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Batch&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-batch-5-0-5-and-5-1-1-available-now&quot;&gt;5.1.1, 5.0.5&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Boot&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/22/spring-boot-3-3-0-m2-available-now&quot;&gt;3.3.0-M2&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/22/spring-boot-3-2-3-available-now&quot;&gt;3.2.3&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/22/spring-boot-3-1-9-available-now&quot;&gt;3.1.9&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/16/first-milestone-of-spring-data-2024-0-0-available&quot;&gt;2024.0.0-M1&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/16/spring-data-2023-1-3-and-2023-0-9-available&quot;&gt;2023.1.3, 2023.0.9&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Framework&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/15/spring-framework-6-1-4-6-0-17-and-5-3-32-available-now&quot;&gt;6.1.4, 6.0.17, 5.3.32&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring for GraphQL&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-for-graphql-1-3-m1-released&quot;&gt;1.3-M1&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-for-graphql-1-2-5-released&quot;&gt;1.2.5&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring LDAP&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-ldap-3-1-4-and-3-2-2-are-available&quot;&gt;3.2.2, 3.1.4&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Modulith&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/23/spring-modulith-1-0-6-1-1-3-and-1-2-m2-released&quot;&gt;1.2-M2, 1.1.3, 1.0.6&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Security&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-security-6-2-2-6-1-7-and-5-8-10-are-now-available&quot;&gt;6.2.2, 6.1.7, 5.8.10&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Shell&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/28/spring-shell-3-1-9-and-3-2-2-are-now-available&quot;&gt;3.2.2, 3.1.19&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Tools&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/08/spring-tools-4-21-1-released&quot;&gt;4.21.1&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Micrometer&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/micrometer-metrics/micrometer/releases/tag/v1.13.0-M1&quot;&gt;1.13.0-M1&lt;/a&gt;, &lt;a href=&quot;https://github.com/micrometer-metrics/micrometer/releases/tag/v1.12.3&quot;&gt;1.12.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/micrometer-metrics/micrometer/releases/tag/v1.11.9&quot;&gt;1.11.9&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Micrometer Tracing&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/micrometer-metrics/tracing/releases/tag/v1.3.0-M1&quot;&gt;1.3.0-M1&lt;/a&gt;, &lt;a href=&quot;https://github.com/micrometer-metrics/tracing/releases/tag/v1.2.3&quot;&gt;1.2.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/micrometer-metrics/tracing/releases/tag/v1.1.10&quot;&gt;1.1.10&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Reactor&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/reactor/reactor/releases/tag/2023.0.3&quot;&gt;2023.0.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/reactor/reactor/releases/tag/2022.0.16&quot;&gt;2022.0.16&lt;/a&gt;, &lt;a href=&quot;https://github.com/reactor/reactor/releases/tag/2020.0.41&quot;&gt;2020.0.41&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;how-can-we-help&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#how-can-we-help&quot; aria-label=&quot;how can we help permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How can we help?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://tanzu.vmware.com/spring-health-assessment&quot;&gt;Get a free Spring Health Assessment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://tanzu.vmware.com/spring-runtime#contact-form&quot;&gt;Talk to an expert&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://spring.io/consulting&quot;&gt;Spring Consulting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://spring.academy/&quot;&gt;Spring Academy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;tanzu-spring-runtime-commercial-releases&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tanzu-spring-runtime-commercial-releases&quot; aria-label=&quot;tanzu spring runtime commercial releases permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tanzu Spring Runtime Commercial Releases&lt;/h2&gt;
+&lt;p&gt;Tanzu Spring Runtime commercial releases have been released and are now available on the Spring commercial artifact repository. These releases can be accessed by those with a &lt;a href=&quot;https://docs.vmware.com/en/Tanzu-Spring-Runtime/Commercial/Tanzu-Spring-Runtime/spring-commercial-subscription.html&quot;&gt;Spring Enterprise Subscription&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The table below contains a list of all the commercial artifacts and their versions that have been released.  Each project listed will link to their commercial page which includes their changelog and reference documentation.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Project&lt;/th&gt;
+&lt;th&gt;Version(s)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Authorization Server&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-authorization-server&quot;&gt;1.0.5&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Boot&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-boot&quot;&gt;3.0.15, 2.7.20&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud&quot;&gt;2022.0.6&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Config&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud-config&quot;&gt;4.0.6&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Contract&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud-contract&quot;&gt;4.0.6&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Netflix&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud-netflix&quot;&gt;4.0.5&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Cloud Vault&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud-vault&quot;&gt;4.0.3&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data Cassandra&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-cassandra&quot;&gt;4.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data Commons&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-commons&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data JPA&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-jpa&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data LDAP&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-ldap&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data MongoDB&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-mongodb&quot;&gt;4.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data Redis&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-redis&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data Relational&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-relational&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Data REST&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-rest&quot;&gt;4.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Integration&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-integration&quot;&gt;6.0.10&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring LDAP&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-ldap&quot;&gt;3.0.7&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Security&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-security&quot;&gt;6.0.9&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Session&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-session&quot;&gt;3.0.5&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Spring Shell&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-shell&quot;&gt;3.0.12, 2.1.16&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Micrometer&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/micrometer&quot;&gt;1.10.14&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Micrometer Tracing&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/micrometer-tracing&quot;&gt;1.0.13&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;learn-more-about-tanzu-spring-runtime&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#learn-more-about-tanzu-spring-runtime&quot; aria-label=&quot;learn more about tanzu spring runtime permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Learn more about Tanzu Spring Runtime&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://spring.vmware.com/&quot;&gt;Why Tanzu Spring Runtime?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.vmware.com/en/Tanzu-Spring-Runtime/Commercial/Tanzu-Spring-Runtime/index.html&quot;&gt;Tanzu Spring Runtime Reference Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.vmware.com/en/Tanzu-Spring-Runtime/Commercial/Tanzu-Spring-Runtime/spring-commercial-subscription.html&quot;&gt;Spring Enterprise Subscription&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Support timeline announcement for Spring Framework 6.0.x and 5.3.x]]></title><link>https://spring.io/blog/2024/03/01/support-timeline-announcement-for-spring-framework-6-0-x-and-5-3-x</link><guid isPermaLink="true">https://spring.io/blog/2024/03/01/support-timeline-announcement-for-spring-framework-6-0-x-and-5-3-x</guid><dc:creator><![CDATA[Juergen Hoeller]]></dc:creator><pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Dear Spring community,&lt;/p&gt;
+&lt;p&gt;As we are preparing for the Spring Framework 6.2 release later this year, it is time to phase out not only the 6.0.x branch but also the 5.3.x line.&lt;/p&gt;
+&lt;p&gt;We hereby announce that the last 6.0.x and 5.3.x releases will be published in August, with the official end of open source support on August 31, 2024.  Along with Spring Framework 5.3.x, the Spring Security project makes the same adjustment for its 5.8.x timeline.&lt;/p&gt;
+&lt;p&gt;The Spring Framework 5.3.x line has been one of the longest-supported branches in Spring&apos;s history and keeps being supported under commercial support terms for another couple of years. You can read more about our commercial releases at &lt;a href=&quot;https://spring.vmware.com&quot;&gt;https://spring.vmware.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With Spring Boot 2.7.x having reached its end of open source support already, we decided to align the last 5.3.x release with the end of the 6.0.x line. If you have not done so already, please plan your upgrade path to 6.1.x at your earliest convenience.&lt;/p&gt;
+&lt;p&gt;The team will focus on Spring Framework 6.2 now, with a first milestone coming up and a release candidate planned for September; more on this soon.&lt;/p&gt;
+&lt;p&gt;Cheers,
+Juergen&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring Functions Catalog 5.0.0?M1 Available]]></title><link>https://spring.io/blog/2024/03/01/spring-functions-catalog-5-0-0-m1-available</link><guid isPermaLink="true">https://spring.io/blog/2024/03/01/spring-functions-catalog-5-0-0-m1-available</guid><dc:creator><![CDATA[Artem Bilan]]></dc:creator><pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of Spring Cloud Dataflow team, it is my pleasure to introduce you to Spring Functions Catalog.
+The project&apos;s primary focus is to provide a set of standalone Java functions that can be useful in the end-user applications as-is.
+All the published artifacts are, essentially, auto-configurations for some specific &lt;code&gt;Supplier&lt;/code&gt;, &lt;code&gt;Function&lt;/code&gt; or &lt;code&gt;Consumer&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We have just released &lt;code&gt;5.0.0-M1&lt;/code&gt; into &lt;a href=&quot;https://repo.spring.io/milestone&quot;&gt;https://repo.spring.io/milestone&lt;/a&gt; repository, and all you need is to include this BOM into your Gradle (or Maven) configuration:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-groovy&quot;&gt;org.springframework.cloud.fn:spring-function-dependencies:5.0.0-M1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and choose respective function as dependency for your project.&lt;/p&gt;
+&lt;p&gt;The Spring Functions Catalog is a rebranding (and next generation) of the &lt;code&gt;functions&lt;/code&gt; sub-module of &lt;a href=&quot;https://github.com/spring-cloud/stream-applications&quot;&gt;Stream Applications&lt;/a&gt; project.
+That&apos;s why we chose a version as &lt;code&gt;5.0&lt;/code&gt; from the start since all the functions in this project do the same what they have in Stream Applications.
+Therefore, the next our natural step is to migrate Stream Applications to use this new Spring Functions Catalog.&lt;/p&gt;
+&lt;p&gt;However, the goal of Spring Functions Catalog is not only to feed Stream Applications.
+Because all of them are independent artifacts of an auto-configuration for a single &lt;code&gt;Supplier&lt;/code&gt;, &lt;code&gt;Function&lt;/code&gt; or &lt;code&gt;Consumer&lt;/code&gt; with specific job to do, these functions can simply be added into classpath and used in the target project as-is or composed with other tasks.
+Most of these functions provide an auto-configuration for specific Spring Integration &lt;a href=&quot;https://docs.spring.io/spring-integration/reference/endpoint-summary.html#endpoint-summary&quot;&gt;Channel Adapter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are just a few examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;sftpSupplier&lt;/code&gt; connects to a SFTP server and polls files from a remote directory and &quot;supplies&quot; the files to your application&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;kafkaPublisher&lt;/code&gt; (the &lt;code&gt;java.util.function.Consumer&lt;/code&gt; implementation) produces records into an Apache Kafka topic&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;aggregatorFunction&lt;/code&gt; groups multiple inputs into one according to some correlation key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After being auto-configured into the &lt;code&gt;ApplicationContext&lt;/code&gt;, these function can be injected into to the target service and composed with plain Java API (see &lt;code&gt;Function.andThen(Function)&lt;/code&gt;).
+However, better (and more natural for Spring applications) way is to use &lt;a href=&quot;https://spring.io/projects/spring-cloud-function&quot;&gt;Spring Cloud Function&lt;/a&gt; project capabilities.
+For example, the &lt;code&gt;FunctionFlowBuilder&lt;/code&gt; from &lt;a href=&quot;https://docs.spring.io/spring-cloud-function/docs/current/reference/html/spring-integration.html#spring-integration&quot;&gt;Spring Cloud Function Integration&lt;/a&gt; module can be used to compose an &lt;code&gt;IntegrationFlow&lt;/code&gt; for any complex solution.
+Another way is to compose them by names via &lt;code&gt;spring.cloud.function.definition&lt;/code&gt; configuration property.&lt;/p&gt;
+&lt;p&gt;As a proof of concept the &lt;a href=&quot;https://github.com/spring-cloud/spring-functions-catalog/tree/main/samples/time-spel-log&quot;&gt;time-spel-log&lt;/a&gt; sample in the project repository has these dependencies:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-groovy&quot;&gt;implementation &apos;org.springframework.cloud.fn:spring-time-supplier&apos;
+implementation &apos;org.springframework.cloud.fn:spring-spel-function&apos;
+implementation &apos;org.springframework.cloud.fn:spring-log-consumer&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;application.yml&lt;/code&gt; has this property:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-yaml&quot;&gt;spring:
+  cloud:
+    function:
+      definition: timeSupplier|spelFunction|logConsumer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The application logic is just like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Scheduled(fixedDelay = 1000)
+void scheduleFunctionCall() {
+  this.composedFunction.run();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Where &lt;code&gt;composedFunction&lt;/code&gt; is a &lt;code&gt;Runnable&lt;/code&gt; from &lt;code&gt;FunctionCatalog&lt;/code&gt; and it is that mentioned above composition in the &lt;code&gt;application.yml&lt;/code&gt;.
+The application emits into logs the current time after some transformation every second.&lt;/p&gt;
+&lt;p&gt;Give Spring Functions Catalog a shot, and any feedback or contribution are welcome!&lt;/p&gt;
+&lt;p&gt;From here we are heading for &lt;code&gt;RC1&lt;/code&gt; in the end of March and &lt;code&gt;GA&lt;/code&gt; in April.&lt;/p&gt;
+&lt;p&gt;See more information in &lt;a href=&quot;https://github.com/spring-cloud/spring-functions-catalog&quot;&gt;GitHub repository&lt;/a&gt; for Spring Functions Catalog.&lt;/p&gt;
+&lt;p&gt;Cheers, +
+Artem&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Bootiful Podcast: Roni Dover on Digma AI]]></title><link>https://spring.io/blog/2024/02/29/a-bootiful-podcast-roni-dover-on-digma-ai</link><guid isPermaLink="true">https://spring.io/blog/2024/02/29/a-bootiful-podcast-roni-dover-on-digma-ai</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Thu, 29 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this installment we talk to Digma AI founder Roni Dover&lt;/p&gt;
+&lt;iframe title=&quot;Roni Dover on Digma AI&quot; allowtransparency=&quot;true&quot; height=&quot;150&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:150px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?i=dgctj-15985cd-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=7&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Spring Tips: the Spring Authorization Server: securing SPAs and messaging flows]]></title><link>https://spring.io/blog/2024/02/28/spring-tips-the-spring-authorization-server-securing-spas-and-messaging</link><guid isPermaLink="true">https://spring.io/blog/2024/02/28/spring-tips-the-spring-authorization-server-securing-spas-and-messaging</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;hi, Spring fans! In this installment, we continue our look at the venerable Spring Authorization Server, this time looking at how to extend its use beyond just HTTP APIs, to secure single page applications and messaging flows with OAuth.&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/p3aLjH2VPzU?si=wfTWGituj_bjA-Pz&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;</content:encoded></item></channel></rss>
