@@ -1,4 +1,861 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 10 Mar 2024 12:46:08 GMT</lastBuildDate><item><title><![CDATA[A Bootiful Podcast: Cristian Schuszter on CERN]]></title><link>https://spring.io/blog/2024/03/07/a-bootiful-podcast-cristian-schuszter-on-cern</link><guid isPermaLink="true">https://spring.io/blog/2024/03/07/a-bootiful-podcast-cristian-schuszter-on-cern</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Thu, 07 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this installment I talk to Cristian Schuszter, a software engineer at CERN. (This episode was recorded live at VOXXED DAYS CERN!).&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 Mar 2024 00:49:26 GMT</lastBuildDate><item><title><![CDATA[This Week in Spring - March 12th, 2024]]></title><link>https://spring.io/blog/2024/03/13/this-week-in-spring-march-12th-2024</link><guid isPermaLink="true">https://spring.io/blog/2024/03/13/this-week-in-spring-march-12th-2024</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! And what a week it&apos;s going to be!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Do this first&lt;/strong&gt;: we need your help! Please answer some questions in &lt;a href=&quot;https://spring.io/blog/2024/03/05/the-state-of-spring-survey-is-back&quot;&gt;our &lt;em&gt;State of Spring&lt;/em&gt; survey!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Join me for a look at the latest-and-greatest, chronicling &lt;a href=&quot;https://spring.io/blog/2024/03/11/bootiful-spring-boot-in-2024-part-1&quot;&gt;how I got started with Spring Boot in 2024&lt;/a&gt;!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://spring.io/blog/2024/03/12/spring-ai-0-8-1-released&quot;&gt;Spring AI 0.8.1, with new support for Google&apos;s Gemini, Mistral AI, QDrant vector store, and improvements across the board, has been released!&lt;/a&gt;. Also: it &lt;em&gt;should&lt;/em&gt; work with AOT! (let us know if it doesn&apos;t!)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://spring.io/blog/2024/03/07/a-bootiful-podcast-cristian-schuszter-on-cern&quot;&gt;Cristian Schuszter sat down with me for a discussion about CERN, what they do, their use of Java and Spring Boot, and so much more&lt;/a&gt; in this installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Speaking of Spring AI, just last week they announced easy, &lt;a href=&quot;https://spring.io/blog/2024/03/06/function-calling-in-java-and-spring-ai-using-the-latest-mistral-ai-api&quot;&gt;portable support for function callbacks&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;In last week&apos;s installment of Spring Tips, I concluded my three-part series &lt;a href=&quot;https://spring.io/blog/2024/03/06/spring-tips-the-spring-authorization-server-durability-of-data&quot;&gt;looking at the Spring Authorization Server&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I did an article for the &lt;strong&gt;New Stack&lt;/strong&gt; called &lt;a href=&quot;https://thenewstack.io/we-can-have-nice-things-upgrading-to-java-21-is-worth-it&quot;&gt;&lt;em&gt;We Can Have Nice Things: Upgrading to Java 21 is worth it&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Netflix&apos;s Paul Bakker has shared a very interesting blog looking at Netflix&apos;s motivations for migrating &lt;em&gt;en masse&lt;/em&gt; to &lt;a href=&quot;https://netflixtechblog.com/bending-pause-times-to-your-will-with-generational-zgc-256629c9386b?gi=0d00da753a52&quot;&gt;Java 21 and their incredible gains just by leveraging the new garbage collectors&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I was captivated by this blog that I invited Paul and his colleague &lt;a href=&quot;https://www.youtube.com/watch?v=HiCfTHmsXMk&quot;&gt;Kavitha Srinivasan&lt;/a&gt; to join me for a good discussion and demo on not just the garbage collector usage, but their migration to Spring Boot, their use of Java 21, some of the things they&apos;re doing to improve startup time, and of course the amazing synergistic work they&apos;re doing, with us, to make Spring GraphQL and Netflix&apos;s DGS frameworks play well together.&lt;/li&gt;
+&lt;li&gt;I&apos;ll be speaking and keynoting at Google Cloud Next 2024; &lt;a href=&quot;https://twitter.com/rseroter/status/1766192665534562538?s=12&amp;#x26;t=n-UflcIbnx1lage-TBk0Cg&quot;&gt;I hope you&apos;ll join the fun and say &quot;hi!&quot; if you&apos;re going to be there!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Spring AI 0.8.1 Released]]></title><link>https://spring.io/blog/2024/03/12/spring-ai-0-8-1-released</link><guid isPermaLink="true">https://spring.io/blog/2024/03/12/spring-ai-0-8-1-released</guid><dc:creator><![CDATA[Mark Pollack]]></dc:creator><pubDate>Tue, 12 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We are happy to announce the milestone 0.8.1 release of Spring AI.  Thanks for all the community contributions and great discussion on GitHub issues.&lt;/p&gt;
+&lt;p&gt;This release has the following new features and improvements.&lt;/p&gt;
+&lt;h2 id=&quot;google-gemini&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#google-gemini&quot; aria-label=&quot;google gemini permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Google Gemini&lt;/h2&gt;
+&lt;p&gt;Google recently released its Gemini AI Model. It has many exciting features and functionalities; check their &lt;a href=&quot;https://blog.google/technology/ai/google-gemini-ai/&quot;&gt;release blog&lt;/a&gt; for an overview.&lt;/p&gt;
+&lt;p&gt;Features supported in Spring AI are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One of Gemini&apos;s marquee features is its multimodal support. This lets you chat with the model using images, videos, and text. For example, you can send the model a photo of a plate of cookies and ask it to give you a recipe for those cookies.  Spring AI supports this feature; &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/clients/vertexai-gemini-chat.html#_multimodal&quot;&gt;read more about it here&lt;/a&gt; and take a look at the &lt;a href=&quot;https://github.com/tzolov/spring-ai-aot-tests/blob/main/vertexai-gemini-aot-demo/src/main/java/org/springframework/ai/aot/test/vertexai/gemini/VertexAiGeminiAotDemoApplication.java&quot;&gt;sample application&lt;/a&gt; that showcases many Gemini features.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/clients/vertexai-gemini-chat.html&quot;&gt;Streaming and Non-Streaming chat clients&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/clients/functions/vertexai-gemini-chat-functions.html&quot;&gt;Function Calling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Native compilation of Gemini applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that the Google Vertex Palm2 support will be removed in a future release of Spring AI as &lt;a href=&quot;https://ai.google.dev/palm_docs/deprecation&quot;&gt;Google is decommissioning this model in 6 months&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;mistral-ai&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#mistral-ai&quot; aria-label=&quot;mistral ai permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Mistral AI&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://mistral.ai/&quot;&gt;Mistral AI&lt;/a&gt; stands out for its development of fast, secure, open-source large language models.  Take a look at the &lt;a href=&quot;https://github.com/tzolov/spring-ai-aot-tests/blob/main/mistralai-aot-demo/src/main/java/org/springframework/ai/aot/test/mistralai/MistralAiAotDemoApplication.java&quot;&gt;sample application&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Features supported in Spring AI are&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/clients/mistralai-chat.html&quot;&gt;Streaming and Non-Streaming chat clients with retry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/clients/functions/mistralai-chat-functions.html&quot;&gt;Function Calling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Native compilation of Mistral applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;function-calling-improvements&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#function-calling-improvements&quot; aria-label=&quot;function calling improvements permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Function Calling Improvements&lt;/h2&gt;
+&lt;p&gt;We have made several improvements under the hood for Function Calling and created a &lt;a href=&quot;https://github.com/tzolov/spring-ai-function-calling-portability&quot;&gt;sample application that demonstrates the portability of Spring AI¡¯s support for functions&lt;/a&gt; across OpenAI, Azure OpenAI, Google Gemini, and Mistral AI.&lt;/p&gt;
+&lt;h2 id=&quot;openai-improvements&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#openai-improvements&quot; aria-label=&quot;openai improvements permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;OpenAI Improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/transcriptions/openai-transcriptions.html&quot;&gt;Audio Transcriptions&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Added support for &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/clients/openai-chat.html#_retry_properties&quot;&gt;retrying requests&lt;/a&gt; due to transient errors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;azure-improvements&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#azure-improvements&quot; aria-label=&quot;azure improvements permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Azure Improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Added support for &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/clients/functions/azure-open-ai-chat-functions.html&quot;&gt;function calling&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Native compilation of Azure AI applications&lt;/li&gt;
+&lt;li&gt;A new &lt;a href=&quot;https://github.com/tzolov/spring-ai-aot-tests/blob/main/azure-openai-aot-demo/src/main/java/org/springframework/ai/aot/test/azure/openai/AzureOpenaiAotDemoApplication.java&quot;&gt;sample application&lt;/a&gt; shows these features.&lt;/li&gt;
+&lt;li&gt;Note that the autoconfiguration properties have changed.  The property named &quot;spring.ai.azure.openai.chat.options.model&quot; is now &quot;spring.ai.azure.openai.chat.options.deployment-name&quot;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;qdrant-vector-database&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#qdrant-vector-database&quot; aria-label=&quot;qdrant vector database permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Qdrant Vector Database&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://qdrant.tech/&quot;&gt;Qdrant&lt;/a&gt; is an open-source vector database and search engine written in Rust, known for its fast, scalable vector similarity search service.  Many thanks to Qdrant for providing this &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/api/vectordbs/qdrant.html&quot;&gt;new implementation&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;spring-intializr&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-intializr&quot; aria-label=&quot;spring intializr permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring Intializr&lt;/h2&gt;
+&lt;p&gt;You can create new Spring AI applications for different AI models and Vector Databases at &lt;a href=&quot;https://start.spring.io&quot;&gt;https://start.spring.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thanks to everyone who has helped make this release possible.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Bootiful Spring Boot in 2024 (part 1)]]></title><link>https://spring.io/blog/2024/03/11/bootiful-spring-boot-in-2024-part-1</link><guid isPermaLink="true">https://spring.io/blog/2024/03/11/bootiful-spring-boot-in-2024-part-1</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Mon, 11 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;NB: the code is &lt;a href=&quot;https://github.com/joshlong-attic/bootiful-spring-boot-2024-blog/tree/main/service&quot;&gt;here on my Github account:
+&lt;code&gt;github.com/joshlong/bootiful-spring-boot-2024-blog&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Hi, Spring fans! I&apos;m &lt;a href=&quot;https://spring.io/team/joshlong&quot;&gt;Josh Long&lt;/a&gt;, and I
+work on the Spring team. I&apos;m excited to be keynoting and giving a talk at &lt;a href=&quot;https://jdconf.com&quot;&gt;Microsoft&apos;s JDConf&lt;/a&gt; this year. I&apos;m a Kotlin GDE and a Java Champion, and I&apos;m
+of the opinion that there&apos;s never been a better time to be a Java and
+Spring Boot developer. I say that fully aware of where we stand in the
+span of things today. It&apos;s been 21+ years since the earliest releases of
+the Spring Framework and 11+ years since the earliest releases of Spring
+Boot. This year marks 20 years since the Spring Framework and 10 years
+since Spring Boot. So, when I say there&apos;s never been a better time to be
+a Java and Spring developer, bear in mind I&apos;ve been in this for the
+better part of those decades. I love Java and the JVM, and I love
+Spring, and it&apos;s been amazing.&lt;/p&gt;
+&lt;p&gt;But this is the best time. It&apos;s never been close. So, let&apos;s develop a
+new application, as always, by visiting my second favorite place on the
+internet, after production,
+&lt;code&gt;start.spring.io&lt;/code&gt;[&lt;a href=&quot;https://start.spring.io&quot;&gt;https://start.spring.io&lt;/a&gt;], and we&apos;ll see what I
+mean. Click &lt;code&gt;Add Dependencies&lt;/code&gt; and choose &lt;code&gt;Web&lt;/code&gt;, &lt;code&gt;Spring Data JDBC&lt;/code&gt;,
+&lt;code&gt;OpenAI&lt;/code&gt;, &lt;code&gt;GraalVM Native Support&lt;/code&gt;, &lt;code&gt;Docker Compose&lt;/code&gt;, &lt;code&gt;Postgres&lt;/code&gt;, and
+&lt;code&gt;Devtools&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Give it an artifact name. I called my service... &quot;service&quot;. I&apos;m great
+with names. I get that from my dad. My dad was also amazing with names.
+When I was a small boy, we had a tiny little white dog, and my father
+named him &lt;em&gt;White Dog&lt;/em&gt;. He was our family pet for years. But after around
+ten years, he disappeared. I&apos;m not sure what became of him after all.
+Maybe he got a job; I don&apos;t know. But then miraculously, another small
+white dog appeared tapping on our home&apos;s screen door. So we took him in,
+and my father named him &lt;em&gt;Too&lt;/em&gt;. Or &lt;em&gt;Two&lt;/em&gt;. I don&apos;t know. Anyway, &lt;em&gt;great&lt;/em&gt;
+with names. That said, my mom tells me all the time that I&apos;m very lucky
+she named me...? And, yah, that&apos;s probably true.&lt;/p&gt;
+&lt;p&gt;Anyway, choose Java 21. This part is key. You can&apos;t use Java 21 if you
+don&apos;t use Java 21. So, you need Java 21. But we are also going to use
+GraalVM for its native image capabilities.&lt;/p&gt;
+&lt;p&gt;Don&apos;t have Java 21 installed? Download it! Use the fantastic
+&lt;a href=&quot;https://sdkman.io&quot;&gt;SDKMAN&lt;/a&gt; tool: &lt;code&gt;sdk install java 21-graalce&lt;/code&gt;. And
+then make it your default: &lt;code&gt;sdk default java 21-graalce&lt;/code&gt;. Open a new
+shell. Download the &lt;code&gt;.zip&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;Java 21 is amazing. It&apos;s a far sight better than Java 8. It&apos;s
+technically superior in every way. It&apos;s faster, more robust, more
+syntax-rich. It&apos;s also morally superior. You won&apos;t like the look of
+shame and disgrace in your children&apos;s eyes when they see you&apos;re using
+Java 8 in production. Don&apos;t do it. Be the change you want to see in the
+world. Use Java 21.&lt;/p&gt;
+&lt;p&gt;You&apos;ll get a zip file. Unzip it and open it in your IDE.&lt;/p&gt;
+&lt;p&gt;I&apos;m using IntelliJ IDEA, and it installs a command-line tool called
+&lt;code&gt;idea&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;cd service
+idea build.gradlew
+# idea pom.xml if you&apos;re using Apache Maven
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you&apos;re using Visual Studio Code, be sure to install the &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack&quot;&gt;&lt;em&gt;Spring Boot
+Extension
+Pack&lt;/em&gt;&lt;/a&gt;
+on the &lt;em&gt;Visual Studio Code Marketplace&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This new application is going to be talking to a database; it&apos;s a
+data-centric application. On the &lt;em&gt;Spring Initializr&lt;/em&gt;, we added support
+for PostgreSQL, but now we need to connect to it. The last thing we want
+is a long &lt;code&gt;README.md&lt;/code&gt; with a section titled, &lt;em&gt;A Hundred Easy Steps to
+Development&lt;/em&gt;. We want to live that &lt;em&gt;`git clone` &amp;#x26; Run&lt;/em&gt; life!&lt;/p&gt;
+&lt;p&gt;To that end, the Spring Initializr generated a &lt;a href=&quot;https://github.com/docker/compose&quot;&gt;Docker
+Compose&lt;/a&gt; &lt;code&gt;compose.yml&lt;/code&gt; file that
+contains a definition for Postgres, the amazing SQL database.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;the Docker Compose file, &lt;code&gt;compose.yaml&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-yaml&quot;&gt;services:
+  postgres:
+    image: &apos;postgres:latest&apos;
+    environment:
+      - &apos;POSTGRES_DB=mydatabase&apos;
+      - &apos;POSTGRES_PASSWORD=secret&apos;
+      - &apos;POSTGRES_USER=myuser&apos;
+    ports:
+      - &apos;5432&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Even better, Spring Boot is configured to automatically run the Docker
+Compose (&lt;code&gt;docker compose up&lt;/code&gt;) configuration when the Spring Boot
+application starts up. No need to configure connectivity details like
+&lt;code&gt;spring.datasource.url&lt;/code&gt; and &lt;code&gt;spring.datasource.password&lt;/code&gt;, etc. It&apos;s all
+done with Spring Boot&apos;s amazing autoconfiguration. Ya love to see it!
+And, never wanting to leave a mess, Spring Boot will shut down the
+Docker containers on application shutdown, too.&lt;/p&gt;
+&lt;p&gt;We want to move as quickly as possible. To that end, we selected
+DevTools on the &lt;em&gt;Spring Initializr&lt;/em&gt;. It&apos;ll allow us to move quickly. The
+core conceit here is that restarting Java is pretty slow. Restarting
+Spring, however, is really quick. So, what if we had a process
+monitoring our project folder, and that could take note of newly
+compiled &lt;code&gt;.class&lt;/code&gt; files, load them into the classloader, and then create
+a new Spring &lt;code&gt;ApplicationContext&lt;/code&gt;, discarding the old one, and giving us
+the appearance of a live reload? That&apos;s exactly what Spring&apos;s DevTools
+do. Run it during development and see your restart time diminish by huge
+fractions!&lt;/p&gt;
+&lt;p&gt;This works because, again, Spring is super quick to startup...? &lt;em&gt;Except&lt;/em&gt;,
+that is, when you are launching a PostgreSQL database on each restart. I
+love PostgreSQL, but, uh, yeah, it&apos;s not meant to be constantly
+restarted each time you&apos;re tweaking method names, modifying HTTP
+endpoint paths, or finessing some CSS. So, let&apos;s configure Spring Boot
+to simply start the Docker Compose file, and to leave it running instead
+of restarting each time.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;add the property to &lt;code&gt;application.properties&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;spring.docker.compose.lifecycle-management=start_only
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We&apos;ll start with a simple record.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.service;
+
+import org.springframework.data.annotation.Id;
+
+// look mom, no Lombok!
+record Customer(@Id Integer id, String name) {
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I love Java records! And you should too! Don&apos;t sleep on records. This
+innocuous little &lt;code&gt;record&lt;/code&gt; isn&apos;t just a better way to do something like
+Lombok&apos;s &lt;code&gt;@Data&lt;/code&gt; annotation does, it&apos;s actually part of a handful of
+features that, culminating in Java 21 and taken together, support
+something called &lt;em&gt;data-oriented programming&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Java language architect Brian Goetz talks about this in his &lt;a href=&quot;https://www.infoq.com/articles/data-oriented-programming-java/&quot;&gt;InfoQ
+article on Data-Oriented
+Programming&lt;/a&gt;
+in 2022.&lt;/p&gt;
+&lt;p&gt;Java has dominated the world of the monolith, the reasoning goes,
+because of its strong access control, good and quick compiler, privacy
+protections, and so on. Java makes it easy to create relatively modular,
+composable, monolithic applications. Monolithic applications are
+typically large, sprawling codebases, and Java supports it. Indeed, if
+you want modularity and want to structure your large monolithic codebase
+well, check out the &lt;a href=&quot;https://spring.io/projects/spring-modulith&quot;&gt;Spring
+Modulith&lt;/a&gt; project.&lt;/p&gt;
+&lt;p&gt;But things have changed. These days, the vector by which we express
+change in a system these days is &lt;em&gt;not&lt;/em&gt; the specialized implementations
+of deep-seated hierarchies of abstract types (through dynamic dispatch
+and polymorphism), but instead in terms of the often ad-hoc messages
+that get sent across the wire, via HTTP/REST, gRPC, messaging substrates
+like Apache Kafka and RabbitMQ, etc. It&apos;s the data, dummy!&lt;/p&gt;
+&lt;p&gt;Java has evolved to support these new patterns. Let&apos;s take a look at
+four key features - records, pattern matching, smart switch expressions,
+and sealed types - to see what I mean. Suppose we work in a heavily
+regulated industry, like finance.&lt;/p&gt;
+&lt;p&gt;Imagine we have an interface called &lt;code&gt;Loan&lt;/code&gt;. Obviously, loans are heavily
+regulated financial instruments. We don&apos;t want somebody coming along and
+adding an anonymous inner class implementation of the &lt;code&gt;Loan&lt;/code&gt; interface,
+sidestepping the validation and protection we&apos;ve worked so earnestly to
+build into the system.&lt;/p&gt;
+&lt;p&gt;So, we&apos;ll use &lt;code&gt;sealed&lt;/code&gt; types. Sealed types are a new sort of access
+control or visibility modifier.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.service;
+
+sealed interface Loan permits SecuredLoan, UnsecuredLoan {
+
+}
+
+record UnsecuredLoan(float interest) implements Loan {
+}
+
+final class SecuredLoan implements Loan {
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the example, we&apos;re explicitly stipulating that there are two
+implementations of &lt;code&gt;Loan&lt;/code&gt; in the system: &lt;code&gt;SecuredLoan&lt;/code&gt; and
+&lt;code&gt;UnsecuredLoan&lt;/code&gt;. Classes are open for subclassing by default, which
+violates the guarantees implied by a sealed hierarchy. So, we explicitly
+make the &lt;code&gt;SecuredLoan&lt;/code&gt; &lt;code&gt;final&lt;/code&gt;. The &lt;code&gt;UnsecuredLoan&lt;/code&gt; is implemented as a
+record, and is implicitly final.&lt;/p&gt;
+&lt;p&gt;Records are Java&apos;s answer to tuples. They are tuples. It&apos;s just that
+Java is a nominal language: &lt;strong&gt;things have names&lt;/strong&gt;. This tuple has a
+name, too: &lt;code&gt;UnsecuredLoan&lt;/code&gt;. Records give us a lot of power if we agree
+to the contract they imply. The core conceit of records is that the
+identity of the object is equal to the identity of the fields, they&apos;re
+called &apos;components&apos;, in a record. So in this case, the identity of the
+record is equal to the identity of the &lt;code&gt;interest&lt;/code&gt; variable. If we agree
+to that, then the compiler can give us a constructor, it can give us
+storage for each of the components, it can give us a &lt;code&gt;toString&lt;/code&gt; method,
+a &lt;code&gt;hashCode&lt;/code&gt; method, and an &lt;code&gt;equals&lt;/code&gt; method. And it&apos;ll give us accessors
+for the components in the constructor. Nice! &lt;em&gt;And&lt;/em&gt;, it supports
+destructuring! The language knows how to extract out the state for the
+record.&lt;/p&gt;
+&lt;p&gt;Now, let&apos;s say I wanted to display a message for each type of &lt;code&gt;Loan&lt;/code&gt;.
+I&apos;ll code up a method. Here&apos;s the na?ve first implementation.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt; @Deprecated
+    String badDisplayMessageFor(Loan loan) {
+        var message = &quot;&quot;;
+        if (loan instanceof SecuredLoan) {
+            message = &quot;good job! &quot;;
+        }
+        if (loan instanceof UnsecuredLoan) {
+            var usl = (UnsecuredLoan) loan;
+            message = &quot;ouch! that &quot; + usl.interest() + &quot;% interest rate is going to hurt!&quot;;
+        }
+        return message;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This works, sort of. But it&apos;s not carrying its weight.&lt;/p&gt;
+&lt;p&gt;We can clean it up. Let&apos;s take advantage of pattern matching, like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt; @Deprecated
+    String notGreatDisplayMessageFor(Loan loan) {
+        var message = &quot;&quot;;
+        if (loan instanceof SecuredLoan) {
+            message = &quot;good job! &quot;;
+        }
+        if (loan instanceof UnsecuredLoan usl) {
+            message = &quot;ouch! that &quot; + usl.interest() + &quot;% interest rate is going to hurt!&quot;;
+        }
+        return message;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Better. Note that we&apos;re using pattern matching to match the shape of the
+object and then extract the definitively cast-able thing into a
+variable, &lt;code&gt;usl&lt;/code&gt;. We don&apos;t even really need the &lt;code&gt;usl&lt;/code&gt; variable, though,
+do we. Instead, we want to dereference the &lt;code&gt;interest&lt;/code&gt; variable. So we
+can change the pattern matching to extract that variable, like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt; @Deprecated
+    String notGreatDisplayMessageFor(Loan loan) {
+        var message = &quot;&quot;;
+        if (loan instanceof SecuredLoan) {
+            message = &quot;good job! &quot;;
+        }
+        if (loan instanceof UnsecuredLoan(var interest) ) {
+            message = &quot;ouch! that &quot; + interest + &quot;% interest rate is going to hurt!&quot;;
+        }
+        return message;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What happens if I comment out one of the branches? Nothing! The compiler
+doesn&apos;t care. We&apos;re not handling one of the critical paths through which
+this code could pass.&lt;/p&gt;
+&lt;p&gt;Likewise, I have this value stored in a variable, &lt;code&gt;message&lt;/code&gt;, and I&apos;m
+assigning it as a side effect of some condition. Wouldn&apos;t it be nice if
+I could cut out the intermediate value and just return some expression?
+Let&apos;s look at a cleaner implementation using smart switch expressions,
+another nifty novelty in Java.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt; String displayMessageFor(Loan loan) {
+        return switch (loan) {
+            case SecuredLoan sl -&gt; &quot;good job! &quot;;
+            case UnsecuredLoan(var interest) -&gt; &quot;ouch! that &quot; + interest + &quot;% interest rate is going to hurt!&quot;;
+        };
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This version uses smart switch expressions to return a value and pattern
+matching. If you comment out one of the branches, the compiler will
+bark, because - thanks to sealed types - it knows that you haven&apos;t
+exhausted all possible options. Nice! The compiler is doing a lot of
+work for us! The result is both cleaner and more expressive. Mostly.&lt;/p&gt;
+&lt;p&gt;So, back to our regularly scheduled programming. Add an interface for
+the Spring Data JDBC repository and a Spring MVC controller class. Then
+start the application up. Notice that this takes an exceedingly long
+period of time! That&apos;s because behind the scenes, it&apos;s using the Docker
+daemon to start up the PostgreSQL instance.&lt;/p&gt;
+&lt;p&gt;But henceforth, we&apos;re going to use Spring Boot&apos;s &lt;code&gt;DevTools&lt;/code&gt;. You only
+need to recompile. If the app is running, and you&apos;re using Eclipse or
+Visual Studio Code, you will only need to save the file: CMD+S on a
+macOS. IntelliJ IDEA doesn&apos;t have a &lt;code&gt;Save&lt;/code&gt; option; force a build with
+CMD+Shift+F9 on macOS. Nice.&lt;/p&gt;
+&lt;p&gt;Alright, we&apos;ve got our HTTP web endpoint babysitting a database, but
+there&apos;s nothing in the database, so this will fail, surely. Let&apos;s
+initialize our database with some schema and some sample data.&lt;/p&gt;
+&lt;p&gt;Add &lt;code&gt;schema.sql&lt;/code&gt; and &lt;code&gt;data.sql&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;the DDL for our application, &lt;code&gt;schema.sql&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;create table if not exists customer  (
+    id serial primary key ,
+    name text not null
+) ;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;some sample data for the application, &lt;code&gt;data.sql&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;delete from customer;
+insert into customer(name) values (&apos;Josh&apos;) ;
+insert into customer(name) values (&apos;Madhura&apos;);
+insert into customer(name) values (&apos;J?rgen&apos;) ;
+insert into customer(name) values (&apos;Olga&apos;);
+insert into customer(name) values (&apos;St?phane&apos;) ;
+insert into customer(name) values (&apos;Dr. Syer&apos;);
+insert into customer(name) values (&apos;Dr. Pollack&apos;);
+insert into customer(name) values (&apos;Phil&apos;);
+insert into customer(name) values (&apos;Yuxin&apos;);
+insert into customer(name) values (&apos;Violetta&apos;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Make sure to tell Spring Boot to run the SQL files on startup by adding
+the following property to &lt;code&gt;application.properties&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;spring.sql.init.mode=always
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reload the application: CMD+Shift+F9, on macOS. On my computer, that
+reload is about 1/3rd the time, or 66% less, than it takes to restart
+both the JVM and the application itself. Huge.&lt;/p&gt;
+&lt;p&gt;It&apos;s up and running. Visit &lt;code&gt;http://localhost:8080/customers&lt;/code&gt; to see the
+results. It worked! Of course, it worked. It was a demo. It was always
+going to work.&lt;/p&gt;
+&lt;p&gt;This is all pretty stock standard stuff. You could&apos;ve done something
+similar ten years ago. Mind you, the code would&apos;ve been far more
+verbose. Java&apos;s improved by leaps and bounds since then. And of course,
+the speeds wouldn&apos;t have been comparable. And of course, the
+abstractions are better now. But you could&apos;ve done something similar - a
+web application babysitting a database.&lt;/p&gt;
+&lt;p&gt;Things change. There are always new frontiers. Right now, the new
+frontier is &lt;strong&gt;Artificial Intelligence&lt;/strong&gt;, or AI. AI: because the search
+for good ol&apos; &lt;strong&gt;Intelligence&lt;/strong&gt; clearly wasn&apos;t hard enough.&lt;/p&gt;
+&lt;p&gt;AI is a huge industry, but what most people mean when they think of AI
+is &lt;em&gt;leveraging&lt;/em&gt; AI. You don&apos;t need to use Python to use Large Language
+Models (LLMs), in the same way that most folks don&apos;t need to use C to
+use SQL databases. You just need to integrate with the LLMs, and here
+Java is second to none for choice and power.&lt;/p&gt;
+&lt;p&gt;At our last tentpole &lt;a href=&quot;https://springone.io/history-of-spring&quot;&gt;SpringOne&lt;/a&gt;
+developer event, in 2023, we announced &lt;a href=&quot;https://spring.io/projects/spring-ai&quot;&gt;&lt;strong&gt;Spring
+AI&lt;/strong&gt;&lt;/a&gt;, a new project that aims to
+make integrating and working with AI as easy as possible.&lt;/p&gt;
+&lt;p&gt;You&apos;ll want to ingest data, say from an account, files, services, or
+even a set of PDFs. You&apos;ll want to store them for easy retrieval in a
+vector database to support similarity searches. And you&apos;ll want to then
+integrate with an LLM, giving it data from that vector database.&lt;/p&gt;
+&lt;p&gt;Sure, there are client bindings for any of the LLMs that you could
+possibly want - &lt;a href=&quot;https://docs.aws.amazon.com/bedrock/&quot;&gt;Amazon Bedrock&lt;/a&gt;,
+&lt;a href=&quot;https://azure.microsoft.com/en-us/products/ai-services/openai-service&quot;&gt;Azure
+OpenAI&lt;/a&gt;,
+&lt;a href=&quot;https://cloud.google.com/vertex-ai/docs/reference/rest&quot;&gt;Google Vertex&lt;/a&gt;
+&lt;em&gt;and&lt;/em&gt; &lt;a href=&quot;https://ai.google.dev/docs/gemini_api_overview&quot;&gt;Google Gemini&lt;/a&gt;,
+&lt;a href=&quot;https://ollama.com&quot;&gt;Ollama&lt;/a&gt;, &lt;a href=&quot;https://huggingface.co&quot;&gt;HuggingFace&lt;/a&gt;, and
+of course &lt;a href=&quot;https://openai.com&quot;&gt;OpenAI&lt;/a&gt; itself, but that&apos;s &lt;em&gt;just the
+beginning&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;All the knowledge that powers an LLM is baked into a model, and that
+model then informs the LLM&apos;s understanding of the world. But that model
+has an expiry date, of sorts, after which its knowledge is stale. If the
+model was built two weeks ago it won&apos;t know about something that
+happened yesterday. So if you want to build, say, an automated assistant
+that fields requests from users about their bank accounts, then that LLM
+is going to need to be apprised of the up-to-date state of the world
+when it does so.&lt;/p&gt;
+&lt;p&gt;You can add information in the request that you make and use it as
+context to inform the response. If it were only this simple, then that
+wouldn&apos;t be so bad. There&apos;s another wrinkle. Different LLMs support
+different &lt;em&gt;token window sizes&lt;/em&gt;. The token window determines how much
+data can you send and receive for a given request. The smaller the
+window, the less information you can send, and the less informed the LLM
+will be in its response.&lt;/p&gt;
+&lt;p&gt;One thing you might do here is to put the data in a vector store, like
+&lt;a href=&quot;https://github.com/pgvector/pgvector&quot;&gt;pgvector&lt;/a&gt;,
+&lt;a href=&quot;https://neo4j.org&quot;&gt;Neo4j&lt;/a&gt;, &lt;a href=&quot;http://weaviate.io&quot;&gt;Weaviate&lt;/a&gt;, or
+otherwise, and then connect your LLM to that vector database. Vector
+stores give you the ability to, given a word or sets of words, find
+other things that are similar to them. It stores data as mathematical
+representations and lets you query for similar things.&lt;/p&gt;
+&lt;p&gt;This whole process of ingesting, enriching, analyzing and digesting data
+to inform the response from an LLM is called &lt;strong&gt;Retrieval Augmented
+Generation&lt;/strong&gt; (RAG), Spring AI supports all of it. For more, see this
+&lt;a href=&quot;https://www.youtube.com/watch?v=aNKDoiOUo9M&quot;&gt;Spring Tips video I did on Spring
+AI&lt;/a&gt;. We&apos;re not going to
+leverage all these capabilities here, however. Just one.&lt;/p&gt;
+&lt;p&gt;We added &lt;code&gt;OpenAI&lt;/code&gt; support on the Spring Initializr so Spring AI is
+already on the classpath. Add a new controller, like this:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;an AI-powered Spring MVC controller&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.service;
+
+import org.springframework.ai.chat.ChatClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Map;
+
+@Controller
+@ResponseBody
+class StoryController {
+
+    private final ChatClient singularity;
+
+    StoryController(ChatClient singularity) {
+        this.singularity = singularity;
+    }
+
+    @GetMapping(&quot;/story&quot;)
+    Map&amp;#x3C;String, String&gt; story() {
+        var prompt = &quot;&quot;&quot;
+                Dear Singularity,
+
+                Please write a story about the good folks of San Francisco, capital of all things Artificial Intelligence,
+                and please do so in the style of famed children&apos;s author Dr. Seuss.
+
+                Cordially,
+                Josh Long
+                &quot;&quot;&quot;;
+        var reply = this.singularity.call(prompt);
+        return Map.of(&quot;message&quot;, reply);
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pretty straightforward! Inject Spring AI&apos;s &lt;code&gt;ChatClient&lt;/code&gt;, use it to send
+a request to the LLM, get the response, and return it as JSON to the
+HTTP client.&lt;/p&gt;
+&lt;p&gt;You&apos;ll need to configure your connection to OpenAI&apos;s API with a
+property, &lt;code&gt;spring.ai.openai.api-key=&lt;/code&gt;. I exported it as an environment
+variable, &lt;code&gt;SPRING_AI_OPENAI_API_KEY&lt;/code&gt;, before I ran the program. I won&apos;t
+reproduce my key here. Forgive me for not leaking my API credential.&lt;/p&gt;
+&lt;p&gt;CMD+Shift+F9 to reload the application, and then visit the endpoint:
+&lt;code&gt;http://localhost:8080/story&lt;/code&gt;. The LLM might take a few seconds to
+produce a response, so get that cup of coffee, glass of water, or
+whatever, ready for a quick but satisfying sip.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/story-time-ai-response.png&quot; alt=&quot;story time ai response&quot;&gt;
+&lt;figcaption&gt;the JSON response in my browser, with a JSON formatter
+plugin enabled&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;There it is! We live in an age of miracles! The age of the freaking
+singularity! You can do anything now.&lt;/p&gt;
+&lt;p&gt;But it did take a few seconds, didn&apos;t it? I don&apos;t begrudge the computer
+that time! It did a splendid job! I couldn&apos;t do that any faster. Just
+look at the story it generated! It&apos;s a work of art.&lt;/p&gt;
+&lt;p&gt;But it did take a while. And that has scalability implications for our
+applications. Behind the scenes when we make a call to our LLM, we&apos;re
+making a network call. Somewhere, deep in the bowels of the code,
+there&apos;s a &lt;code&gt;java.net.Socket&lt;/code&gt; from which we&apos;ve obtained a
+&lt;code&gt;java.io.InputStream&lt;/code&gt; that represents the &lt;code&gt;byte[]&lt;/code&gt; data coming from the
+service. I don&apos;t know if you remember using &lt;code&gt;InputStream&lt;/code&gt; directly.
+Here&apos;s an example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;    try (var is = new FileInputStream(&quot;afile.txt&quot;)) {
+        var next = -1;
+        while ((next = is.read()) != -1) {
+            next = is.read();
+            // do something with read
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;See that part where we read bytes in from the &lt;code&gt;InputStream&lt;/code&gt; by calling
+&lt;code&gt;InputStream.read&lt;/code&gt;? We call that a &lt;strong&gt;blocking operation&lt;/strong&gt;. If we call
+&lt;code&gt;InputStream.read&lt;/code&gt; on line four, then we must wait until the call
+returns until we can get to line five.&lt;/p&gt;
+&lt;p&gt;What if the service to which we&apos;re connecting simply returns too much
+data? What if the service is down? What if it never returns? What if
+we&apos;re stuck, waiting, in perpetuity? &lt;em&gt;What if&lt;/em&gt;?&lt;/p&gt;
+&lt;p&gt;This is &lt;em&gt;tedious&lt;/em&gt; if it only happens once. But it&apos;s an existential
+threat for our services if it can happen on every thread in the system
+used to handle HTTP requests. This happens a lot. It&apos;s the reason why
+it&apos;s possible to log in to an otherwise unresponsive HTTP service and
+find that the CPU is basically asleep - idle! - doing absolutely nothing
+or little at all. All the threads in the thread pool are stuck in a wait
+state waiting for something that&apos;s not coming.&lt;/p&gt;
+&lt;p&gt;This is a huge waste of the valuable CPUs capacity we have paid for. And
+the best-case scenario is still not good. Even if the method will
+eventually return, it still means that the thread on which that request
+is being handled is unavailable to anything else in the system. The
+method is monopolizing that thread so nobody else in the system can use
+it. This wouldn&apos;t be an issue if threads were cheap and abundant. But
+they&apos;re not. For most of Java&apos;s lifetime, each new thread was paired one
+to one with an operating system thread. And it was not cheap. There&apos;s a
+certain amount of bookkeeping associated with each thread. One to two
+megabytes. So you won&apos;t be able to create many threads, and you&apos;re
+wasting what few threads you do have. The horror! Who needs sleep
+anyway?&lt;/p&gt;
+&lt;p&gt;There&apos;s got to be a better way.&lt;/p&gt;
+&lt;p&gt;You can use non-blocking IO. Things like the hemorrhoid-inducing and
+complex Java NIO library. This is an option, in the same way that living
+with a family of skunks is an option: it stinks! Most of us don&apos;t think
+in terms of non-blocking IO, or regular IO, anyway. We live at higher
+rungs on the abstraction ladder. We could use reactive programming. I
+&lt;em&gt;love&lt;/em&gt; reactive programming. I even wrote a book about it - &lt;em&gt;Reactive
+Spring&lt;/em&gt;[&lt;a href=&quot;https://reactivespring.io&quot;&gt;https://reactivespring.io&lt;/a&gt;]. But it&apos;s not exactly obvious how
+to make that work if you&apos;re not used to thinking like a functional
+programmer. It&apos;s a different paradigm and implies a rewrite of your
+code.&lt;/p&gt;
+&lt;p&gt;What if we could have our non-blocking cake and eat it too? With &lt;a href=&quot;https://openjdk.org&quot;&gt;Java
+21&lt;/a&gt;, now we can! There&apos;s a new feature called
+virtual threads that makes this stuff a ton easier! If you do something
+blocking on one of these new &lt;em&gt;virtual threads&lt;/em&gt;, the runtime will detect
+that you&apos;re doing a blocking thing - like &lt;code&gt;java.io.InputStream.read&lt;/code&gt;,
+&lt;code&gt;java.io.OutputStream.write&lt;/code&gt;, and &lt;code&gt;java.lang.Thread.sleep&lt;/code&gt; - and move
+that blocking, idle activity off of the thread and into RAM. Then, it&apos;ll
+basically set an egg timer for sleep, or monitor the file descriptor for
+IO, and let the runtime repurpose the thread for something else in the
+meantime. When the blocking action has finished, the runtime moves it
+back onto a thread and lets it continue from where it started, all with
+almost no changes to your code. It&apos;s hard to understand, so let&apos;s look
+at it by way of an example. I shamelessly &lt;em&gt;borrowed&lt;/em&gt; this example from
+Oracle Developer Advocate &lt;a href=&quot;https://twitter.com/josepaumard&quot;&gt;Jos? Paumard&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;this example demonstrates creating 1,000 threads and sleeping for 400
+milliseconds on each one, while noting the name of the first of those
+1,000 threads.&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;package com.example.service;
+
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentSkipListSet;
+
+@Configuration
+class Threads {
+
+    private static void run(boolean first, Set&amp;#x3C;String&gt; names) {
+        if (first)
+            names.add(Thread.currentThread().toString());
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Bean
+    ApplicationRunner demo() {
+        return args -&gt; {
+
+            // store all 1,000 threads
+            var threads = new ArrayList&amp;#x3C;Thread&gt;();
+
+            // dedupe elements with Set&amp;#x3C;T&gt;
+            var names = new ConcurrentSkipListSet&amp;#x3C;String&gt;();
+
+            // merci Jos? Paumard d&apos;Oracle
+            for (var i = 0; i &amp;#x3C; 1000; i++) {
+                var first = 0 == i;
+                threads.add(Thread.ofPlatform().unstarted(() -&gt; run(first, names)));
+            }
+
+            for (var t : threads)
+                t.start();
+
+            for (var t : threads)
+                t.join();
+
+            System.out.println(names);
+        };
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We&apos;re using the &lt;code&gt;Thread.ofPlatform&lt;/code&gt; factory method to create regular
+ol&apos; platform threads, identical in nature to the threads we&apos;ve created
+basically since Java&apos;s debut in the 1990&apos;s. The program creates 1,000
+threads. In each thread, we sleep for 100 milliseconds, four times. In
+between, we test if we&apos;re on the first of the 1000 threads, and if we
+are, we note the current thread&apos;s name by adding it to a set. A set
+dedupes its elements; if the same name appears more than once, there&apos;ll
+still only be one element in the set.&lt;/p&gt;
+&lt;p&gt;Run the program (CMD+Shift+F9!) and you&apos;ll see that the physics of the
+program are unchanged. There is only one name in the &lt;code&gt;Set&amp;#x3C;String&gt;&lt;/code&gt;. Why
+wouldn&apos;t there be? We only tested the same thread, over and over.&lt;/p&gt;
+&lt;p&gt;Now, change that constructor to use &lt;em&gt;virtual threads&lt;/em&gt;:
+&lt;code&gt;Thread.ofVirtual&lt;/code&gt;. Super easy change. And now run the program.
+CMD+Shift+F9.&lt;/p&gt;
+&lt;p&gt;You&apos;ll see that there is more than one element in the set. You didn&apos;t
+change the core logic of your code at all. And indeed you only even had
+to change &lt;em&gt;one&lt;/em&gt; thing, but now, seamlessly, behind the scenes, the
+compiler and the runtime rewrote your code so that when something
+blocking happens on a virtual thread, the runtime seamlessly takes you
+off and puts you back on threads after the blocking thing has concluded.
+This means that the thread on which you existed before is now available
+to other parts of the system. Your scalability is going to go through
+the roof!&lt;/p&gt;
+&lt;p&gt;And you might protest, well I don&apos;t want to have to change all my code.
+First, that&apos;s a ridiculous argument, the change is trivial. You might
+protest: I don&apos;t want to be in the business of creating threads, either.
+Good point. Tony Hoare, in the 1970&apos;s, wrote that &lt;code&gt;NULL&lt;/code&gt; is the 1
+billion dollar mistake. He was wrong. It was, in fact, PHP. But, he also
+spoke at length about how untenable it was to build systems using
+threading. You&apos;re going to want to work with higher order abstractions,
+like sagas, actors, or at the very least an &lt;code&gt;ExecutorService&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And there&apos;s a new virtual thread executor as well:
+&lt;code&gt;Executors.newVirtualThreadPerTaskExecutor&lt;/code&gt;. Nice! If you&apos;re using
+Spring Boot, it&apos;s trivial to override the default bean of that type for
+use in parts of the system. Spring Boot will pull that in and defer to
+it instead. Easy enough. But if you&apos;re using Spring Boot 3.2 You are,
+surely, using Spring Boot 3.2, right? You realize that each release is
+only support for like a year, right? Make sure to check out an given
+&lt;a href=&quot;https://spring.io/projects/spring-boot#support&quot;&gt;Spring projects&apos; support
+policy&lt;/a&gt;. If you are
+using 3.2, then you need only add one property to
+&lt;code&gt;application.properties&lt;/code&gt; and we&apos;ll plugin the virtual thread support for
+you.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;spring.threads.virtual.enabled=true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nice! No code changes required. And now you should see much improved
+scalability, and might be able to scale down some of the instances in
+your load balancer, if your services are IO bound. My suggestion? Tell
+your boss you&apos;re gonna save the company a ton of cash but insist you
+want that money in your paycheck. Then deploy this change. Voil?!&lt;/p&gt;
+&lt;p&gt;Alright, we&apos;re moving quickly. We&apos;ve got &lt;code&gt;git clone&lt;/code&gt; &amp;#x26; run-ability.
+We&apos;ve got Docker compose support. We&apos;ve got DevTools. We have a very
+nice language and syntax. We&apos;ve got the freaking singularity. We&apos;re
+moving quickly. We&apos;ve got scalability. Add the Spring Boot Actuator to
+the build and now you&apos;ve got observability. I think it&apos;s time we turned
+to production.&lt;/p&gt;
+&lt;p&gt;I wanna package this application up and make it as efficient as
+possible. Here, my friends, there are a couple of things we need to
+consider. First of all, how do we containerize the application? Simple.
+Use &lt;a href=&quot;https://buildpacks.io&quot;&gt;Buildpacks&lt;/a&gt;. Easy. Remember, friends don&apos;t
+let friends write Dockerfiles. Use Buildpacks. They&apos;re supported out of
+the box with Spring Boot, too: &lt;code&gt;./gradlew buildBootImage&lt;/code&gt; or
+&lt;code&gt;./mvnw spring-boot:build-image&lt;/code&gt;. This isn&apos;t new though, so next
+question.&lt;/p&gt;
+&lt;p&gt;How do we get this thing to be as efficient and optimized as possible?
+And before we dive into this, my friends, it&apos;s important to remember
+that Java is already very very very efficient. I love &lt;a href=&quot;https://thenewstack.io/which-programming-languages-use-the-least-electricity/&quot;&gt;this
+blog&lt;/a&gt;
+from 2018, before the COVID pandemic, or &lt;em&gt;BC&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;It looks at which languages use the least energy, or are the most
+energy-efficient. C is the most energy-efficient. It uses the least
+electricity. 1.0. It&apos;s the baseline. It&apos;s efficient...? for &lt;strong&gt;MACHINES&lt;/strong&gt;.
+Not people! Definitely, &lt;em&gt;not&lt;/em&gt; people.&lt;/p&gt;
+&lt;p&gt;Then we have Rust and its zero-cost abstractions. Well done.&lt;/p&gt;
+&lt;p&gt;Then we have C++...?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/gross.gif&quot; alt=&quot;gross&quot;&gt;&lt;/p&gt;
+&lt;p&gt;C++ is disgusting! Moving on...?&lt;/p&gt;
+&lt;p&gt;Then we have the Ada language, but.. who cares?&lt;/p&gt;
+&lt;p&gt;And then we have Java, which is nearly 2.0. Let&apos;s just round up and say
+2.0. Java is two times - twice! - as inefficient as C. Or one half as
+efficient as C.&lt;/p&gt;
+&lt;p&gt;So far so good? Great. It&apos;s in the top 5 most efficient languages,
+though!&lt;/p&gt;
+&lt;p&gt;If you scroll the list, you&apos;ll see some amazing numbers. Go and C#
+coming in around the 3.0+ range. Scroll down here, and we have
+JavaScript and TypeScript, one of which - to my endless bafflement - is
+four times &lt;em&gt;less&lt;/em&gt; efficient than the other!&lt;/p&gt;
+&lt;p&gt;Then we have PHP and Hack, the less said about which the better. Moving
+on!&lt;/p&gt;
+&lt;p&gt;Then we have JRuby and Ruby. Friends, remember
+&lt;a href=&quot;https://www.jruby.org&quot;&gt;JRuby&lt;/a&gt; is
+&lt;a href=&quot;https://www.ruby-lang.org/en/&quot;&gt;Ruby&lt;/a&gt;, written in Java. And Ruby is
+Ruby, written in C. And yet JRuby is almost a one third more efficient
+than Ruby! Just by dint of having been written in Java, and running on
+the JVM. The JVM is an amazing piece of kit. Absolutely phenomenal.&lt;/p&gt;
+&lt;p&gt;Then.. we have Python. And this, well this makes me very sad indeed! I
+&lt;em&gt;love&lt;/em&gt; Python! I&apos;ve been using Python since the 1990&apos;s! Bill Clinton was
+president when I first learned Python! But these numbers are &lt;em&gt;not&lt;/em&gt;
+great. Think about it. 75.88. Let&apos;s round up to 76. I&apos;m not great at
+math. But you know what is? Freakin&apos; Python! Let&apos;s ask it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/python-doing-math.png&quot; alt=&quot;python doing
+math&quot;&gt;&lt;/p&gt;
+&lt;p&gt;38! That means that if you ran a program in Java, and the generation of
+the energy required to run it creates a bit of carbon that ends up
+trapped in the atmosphere, raising the temperature, and that heightened
+temperature in turn kills ONE tree, then the equivalent program in
+Python would kill THIRTY-EIGHT trees! That&apos;s a forest! That&apos;s worse than
+Bitcoin! We need to do something about this, and soon. I don&apos;t know
+what, but something.&lt;/p&gt;
+&lt;p&gt;Anyway, what I&apos;m trying to say is that Java is already &lt;em&gt;amazing&lt;/em&gt;. I
+think this is because of two things that people take for granted:
+garbage collection and the Just In Time (JIT) compiler.&lt;/p&gt;
+&lt;p&gt;Garbage collection, well we all know what it is. Heck, &lt;a href=&quot;https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf&quot;&gt;even the White
+House appreciates garbage-collected, memory-safe
+languages&lt;/a&gt;
+like Java in its recent report on securing software to secure the
+building blocks of cyberspace.&lt;/p&gt;
+&lt;p&gt;The Java programming language garbage collector lets us write mediocre
+software and sort of &lt;em&gt;get away&lt;/em&gt; with it. It&apos;s dope! That said, I do take
+issue with the notion that it is the &lt;em&gt;original&lt;/em&gt; Java garbage collector!
+That honor belongs elsewhere, like perhaps &lt;a href=&quot;https://twitter.com/jtannady/status/981547257479778307?lang=en&quot;&gt;with
+Jesslyn&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;And the JIT is another amazing piece of kit. It analyses frequently
+accessed code paths in your application and turns them into operating
+system and architecture-specific native code. It can only do this for
+some of your code though. It needs to know that the types that are in
+play when you compile the code are the only types that will be in play
+when you run the code. And some things in Java - a very dynamic language
+with a runtime that&apos;s more akin to that of JavaScript, Ruby, and
+Python - allow Java programs to do things that would violate this
+constraint. Things like serialization, JNI, reflection, resource
+loading, and JDK proxies. Remember, it&apos;s possible, with Java, to have a
+&lt;code&gt;String&lt;/code&gt; that has as its contents a Java source code file, compile that
+string into a &lt;code&gt;.class&lt;/code&gt; file on the filesystem, load the &lt;code&gt;.class&lt;/code&gt; file
+into the &lt;code&gt;ClassLoader&lt;/code&gt;, reflectively create an instance of that class,
+and then - if that class is an interface - to create a JDK proxy of that
+class. And if that class implements &lt;code&gt;java.io.Serializable&lt;/code&gt;, it&apos;s
+possible to write that class instance over a network socket and load it
+on another JVM. And you can do all of that without ever having an
+explicit typed reference to anything beyond &lt;code&gt;java.lang.Object&lt;/code&gt;! It&apos;s an
+amazing language, and this dynamic nature makes it a very productive
+language. It also frustrates the JIT&apos;s attempt at optimizations.&lt;/p&gt;
+&lt;p&gt;Still, the JIT does an amazing job where it can. And the results speak
+for themselves. So, one wonders: why couldn&apos;t we proactively JIT the
+whole program? Ahead of time? And we can. There&apos;s an OpenJDK
+distribution called &lt;a href=&quot;https://graalvm.org&quot;&gt;GraalVM&lt;/a&gt; that has a number of
+niceties that extend the OpenJDK release with extra tools like the
+&lt;code&gt;native-image&lt;/code&gt; compiler. The native image compiler is dope. But this
+native image compiler has the same constraints. It can&apos;t do its magic
+for very dynamic things. Which is a problem. As most code - your unit
+testing libraries, your web frameworks, your ORMs, your logging
+libraries... everything! - use one or all of those dynamic behaviors.&lt;/p&gt;
+&lt;p&gt;There is an escape hatch. You can furnish configuration in the form of
+&lt;code&gt;.json&lt;/code&gt; files to the GraalVM compiler in a well-known directory:
+&lt;code&gt;src/main/resources/META-INF/native-image/$groupId/$artifactId/\*.json&lt;/code&gt;.
+These &lt;code&gt;.json&lt;/code&gt; files have two problems.&lt;/p&gt;
+&lt;p&gt;First, the word &quot;JSON&quot; sounds stupid. I don&apos;t like saying the word
+&quot;JAY-SAWN&quot;. As an adult, I can&apos;t believe we say these things to each
+other. I speak French, and in French, you&apos;d pronounce it &lt;em&gt;jeees?&lt;/em&gt;. So,
+&lt;code&gt;.gison&lt;/code&gt;. Much nicer. The Hokkien language has a word - &lt;em&gt;gingsong&lt;/em&gt;
+(happiness), which also could work. So you could have .gingsong. Pick
+your team! Either way, &lt;code&gt;.json&lt;/code&gt; should not stand. I&apos;m team &lt;code&gt;.gison&lt;/code&gt;, but
+it doesn&apos;t matter.&lt;/p&gt;
+&lt;p&gt;The second problem is that, well, there&apos;s just so much darned of it
+that&apos;s required! Again, just think about all the places where your
+programs do these fun, dynamic things like reflection, serialization,
+JDK proxies, resource loading, and JNI! It&apos;s endless. Your web
+frameworks. Your testing libraries. Your data access technologies. I
+don&apos;t have time to write artisanal, handcrafted configuration files for
+every program. I don&apos;t even have enough time to finish this blog!&lt;/p&gt;
+&lt;p&gt;So, instead, we&apos;ll use the Spring Boot ahead-of-time (AOT) engine
+introduced in 3.0. The AOT engine analyses the beans in your Spring
+application and emits the requisite configuration files for you. Nice!
+There&apos;s even a whole component model that you can use that extends
+Spring to compile time. I won&apos;t get into all of that here, but you can
+read my &lt;a href=&quot;https://tanzu.vmware.com/content/white-papers/spring-boot-3&quot;&gt;free
+e-book&lt;/a&gt; or
+watch my free YouTube video introducing all things &lt;a href=&quot;https://www.youtube.com/watch?v=TOfYlLjXufw&quot;&gt;Spring and
+AOT&lt;/a&gt;. It&apos;s basically the
+same content, just different ways to consume it.&lt;/p&gt;
+&lt;p&gt;So let&apos;s kick off that build with Gradle, &lt;code&gt;./gradlew nativeCompile&lt;/code&gt;, or
+&lt;code&gt;./mvnw -Pnative native:compile&lt;/code&gt; if you&apos;re using Apache Maven. You might
+want to skip tests on this one...? This build will take a little while.
+Remember, it&apos;s doing an analysis of everything in your codebase - be it
+the libraries on the classpath, the JRE, and the classes in your code
+itself - to determine which types it should preserve and which it should
+throw out. The result is a lean, mean, lightning-fast runtime machine,
+but at the cost of a very, &lt;em&gt;very&lt;/em&gt; slow compilation time.&lt;/p&gt;
+&lt;p&gt;It takes so long, in fact, that it kinda just gums up my flow. It stops
+me dead in my tracks, waiting. I am like the platform threads from
+earlier on, in this very blog: &lt;em&gt;blocked&lt;/em&gt;! I get bored. Waiting. Waiting.
+I now finally understand this &lt;a href=&quot;https://xkcd.com/303/&quot;&gt;famous XKCD
+cartoon&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Sometimes I start to hum music. Or theme songs. Or elevator music. You
+know what &lt;a href=&quot;https://en.wikipedia.org/wiki/Elevator_music&quot;&gt;elevator music&lt;/a&gt;
+sounds like, right? Ceaseless, endless. So, I thought, wouldn&apos;t it be
+great if everyone heard elevator music, as well? &lt;a href=&quot;https://github.com/oracle/graal/issues/5327&quot;&gt;So I
+asked&lt;/a&gt;. I got some great
+responses.&lt;/p&gt;
+&lt;p&gt;One suggested, from our friend that we should play this elevator music
+from the soundtrack to the Nintendo 64 video game to the first Pierce
+Brosnan outing as James Bond, &lt;em&gt;Goldeneye&lt;/em&gt;. I like it.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/adinn-elevator-music.png&quot; alt=&quot;adinn elevator music&quot;&gt;
+&lt;figcaption&gt;&lt;em&gt;Goldeneye&lt;/em&gt; had some amazing elevator
+music!&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;One response suggested that having a beeping sound would be useful.
+Couldn&apos;t agree more. My stupid microwave will make a &lt;em&gt;ding!&lt;/em&gt; sound when
+it&apos;s done. Why couldn&apos;t my multi-million line compiler?&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/ivan-beeps.png&quot; alt=&quot;ivan beeps&quot;&gt;
+&lt;figcaption&gt;&lt;em&gt;DING!&lt;/em&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;And then we got this response, from another one of my favorite doctors,
+&lt;a href=&quot;https://twitter.com/fniephaus&quot;&gt;Dr. Niephaus&lt;/a&gt;, who works on the GraalVM
+team. He said that adding elevator music would only just fix the
+symptoms, and not the cause of the problem, which is making GraalVM even
+more efficient in terms of time and memory.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/doctor-niephaus.png&quot; alt=&quot;doctor
+niephaus&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ok. But he did share this promising prototype!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/graalvm-prototype.png&quot; alt=&quot;graalvm
+prototype&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I&apos;m sure it&apos;ll get merged any day now...?&lt;/p&gt;
+&lt;p&gt;Anyway! If you check the compilation, it should be done now. It&apos;s in the
+&lt;code&gt;./build/native/nativeCompile/&lt;/code&gt; folder, and it&apos;s called &lt;code&gt;service&lt;/code&gt;. On my
+machine, the compilation took 52 seconds. Yeesh!&lt;/p&gt;
+&lt;p&gt;Run it. It&apos;ll fail because, again, we&apos;re living that &lt;code&gt;git clone&lt;/code&gt; &amp;#x26; run
+lifestyle! We didn&apos;t specify any connectivity credentials! So, run it
+with environment variables specifying your SQL database connectivity
+details. Here&apos;s the script I used on my Machine. This will work only on
+a Unix-flavored operating system, and works for either Maven or Gradle.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;#!/usr/bin/env bash
+
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost/mydatabase
+export SPRING_DATASOURCE_PASSWORD=secret
+export SPRING_DATASOURCE_USERNAME=myuser
+
+SERVICE=.
+MVN=$SERVICE/target/service
+GRADLE=$SERVICE/build/native/nativeCompile/service
+ls -la $GRADLE &amp;#x26;&amp;#x26; $GRADLE || $MVN
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On my machine, it starts up in ~100 milliseconds! Like a rocket! And,
+obviously, it would be much faster still if I were using something like
+Spring Cloud Function to build AWS Lamba-style functions-as-a-service,
+because I wouldn&apos;t need for example to package an HTTP server. Indeed,
+if pure startup speed were &lt;em&gt;all&lt;/em&gt; that I really wanted, then I might even
+use Spring&apos;s amazing support for &lt;a href=&quot;https://www.youtube.com/watch?v=dMhpDdR6nHw&amp;#x26;t=2658s&quot;&gt;Project
+CRaC&lt;/a&gt;. That&apos;s
+neither here no there. I don&apos;t really care all that much about that
+because this is a standalone, long-lived service. What I care about is
+the resource usage, as represented by the &lt;a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;&gt;Resident Set Size
+(RSS)&lt;/a&gt;. Note the process identifier
+(PID) - it&apos;ll be in the logs. If the PID is, let&apos;s say, &lt;code&gt;55&lt;/code&gt;, then get
+the RSS like this using the &lt;code&gt;ps&lt;/code&gt; utility, available on virtually all
+Unixes:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;ps -o rss 55
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It&apos;ll dump out a number in kilobytes; divide by a thousand and you&apos;ll
+get the number in megabytes. On my machine, it takes just over 100MB to
+run. You can&apos;t run Slack in that tiny amount of memory! I bet you&apos;ve got
+individual browser tabs in Chrome taking that much, or more!&lt;/p&gt;
+&lt;p&gt;So, we have a program that is as concise as can be while being easy to
+develop and iterate on. And it uses virtual threads to give us
+unparalleled scalability. It runs as a standalone, self-contained,
+operating system and architecture-specific native image. Oh! And, it
+supports the freaking singularity!&lt;/p&gt;
+&lt;p&gt;We live in an amazing time. There&apos;s never been a better time to be a
+Java and Spring developer. I hope I&apos;ve so persuaded you, too.&lt;/p&gt;
+&lt;h2 id=&quot;resources&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#resources&quot; aria-label=&quot;resources permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Resources&lt;/h2&gt;
+&lt;p&gt;I, and other members of the Spring team, will be speaking at Microsoft&apos;s JDConf 2024!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Register and join my session at &lt;a href=&quot;https://jdconf.com/agenda.html#joshl-session&quot;&gt;JDConf: Bootiful Spring Boot 3&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Other Spring sessions to attend at JDConf&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdconf.com/agenda.html#markp-session&quot;&gt;Spring AI: Streamlining Java Enterprise AI Development and Deployment&lt;/a&gt;, by Dr. Mark Pollack, Broadcom&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jdconf.com/agenda.html#martinl-session&quot;&gt;How to Keep Your Spring Boot Projects Up-to-Date&lt;/a&gt;, by Martin Lippert, Broadcom&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you enjoyed this blog, I hope you&apos;ll subscribe to our &lt;a href=&quot;https://youtube.com/@springsourcedev&quot;&gt;YouTube
+channel&lt;/a&gt;, where I have new videos
+every week in the &lt;a href=&quot;https://bit.ly/spring-tips-playlist&quot;&gt;&lt;em&gt;Spring Tips&lt;/em&gt;&lt;/a&gt;
+playlist. And, of course, you can find my &lt;a href=&quot;https://biodrop.io/joshlong&quot;&gt;Twitter/X, website, YouTube
+channel, books, Podcast, and much more here on
+Biodrop&lt;/a&gt;. Thank you!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Bootiful Podcast: Cristian Schuszter on CERN]]></title><link>https://spring.io/blog/2024/03/07/a-bootiful-podcast-cristian-schuszter-on-cern</link><guid isPermaLink="true">https://spring.io/blog/2024/03/07/a-bootiful-podcast-cristian-schuszter-on-cern</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Thu, 07 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this installment I talk to Cristian Schuszter, a software engineer at CERN. (This episode was recorded live at VOXXED DAYS CERN!).&lt;/p&gt;
 &lt;p&gt;Don&apos;t forget to help us out with the &lt;a href=&quot;https://dimensionalresearch.co1.qualtrics.com/jfe/form/SV_eL0aSP7GSnporTE&quot;&gt;State of Spring Survey&lt;/a&gt;&lt;/p&gt;
 &lt;iframe title=&quot;Cristian Schuszter on CERN&quot; allowtransparency=&quot;true&quot; height=&quot;150&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:150px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?i=y3td2-15a3291-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=7&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Function Calling in Java and Spring AI using the latest Mistral AI API]]></title><link>https://spring.io/blog/2024/03/06/function-calling-in-java-and-spring-ai-using-the-latest-mistral-ai-api</link><guid isPermaLink="true">https://spring.io/blog/2024/03/06/function-calling-in-java-and-spring-ai-using-the-latest-mistral-ai-api</guid><dc:creator><![CDATA[Christian Tzolov]]></dc:creator><pubDate>Wed, 06 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Mistral AI, a leading developer of open-source large language models, &lt;a href=&quot;https://docs.mistral.ai/guides/function-calling/&quot;&gt;unveiled&lt;/a&gt; the addition of &lt;strong&gt;Function Calling&lt;/strong&gt; support to its cutting-edge models.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Function Calling&lt;/strong&gt; is a feature that facilitates the integration of LLM with external tools and APIs.
@@ -364,52 +1221,4 @@ Then you can run the native executable:&lt;/p&gt;
 &lt;p&gt;With Spring Boot 2.7.x having reached its end of open source support already, we decided to align the last 5.3.x release with the end of the 6.0.x line. If you have not done so already, please plan your upgrade path to 6.1.x at your earliest convenience.&lt;/p&gt;
 &lt;p&gt;The team will focus on Spring Framework 6.2 now, with a first milestone coming up and a release candidate planned for September; more on this soon.&lt;/p&gt;
 &lt;p&gt;Cheers,
-Juergen&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring Functions Catalog 5.0.0?M1 Available]]></title><link>https://spring.io/blog/2024/03/01/spring-functions-catalog-5-0-0-m1-available</link><guid isPermaLink="true">https://spring.io/blog/2024/03/01/spring-functions-catalog-5-0-0-m1-available</guid><dc:creator><![CDATA[Artem Bilan]]></dc:creator><pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of Spring Cloud Dataflow team, it is my pleasure to introduce you to Spring Functions Catalog.
-The project&apos;s primary focus is to provide a set of standalone Java functions that can be useful in the end-user applications as-is.
-All the published artifacts are, essentially, auto-configurations for some specific &lt;code&gt;Supplier&lt;/code&gt;, &lt;code&gt;Function&lt;/code&gt; or &lt;code&gt;Consumer&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;We have just released &lt;code&gt;5.0.0-M1&lt;/code&gt; into &lt;a href=&quot;https://repo.spring.io/milestone&quot;&gt;https://repo.spring.io/milestone&lt;/a&gt; repository, and all you need is to include this BOM into your Gradle (or Maven) configuration:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-groovy&quot;&gt;org.springframework.cloud.fn:spring-function-dependencies:5.0.0-M1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;and choose respective function as dependency for your project.&lt;/p&gt;
-&lt;p&gt;The Spring Functions Catalog is a rebranding (and next generation) of the &lt;code&gt;functions&lt;/code&gt; sub-module of &lt;a href=&quot;https://github.com/spring-cloud/stream-applications&quot;&gt;Stream Applications&lt;/a&gt; project.
-That&apos;s why we chose a version as &lt;code&gt;5.0&lt;/code&gt; from the start since all the functions in this project do the same what they have in Stream Applications.
-Therefore, the next our natural step is to migrate Stream Applications to use this new Spring Functions Catalog.&lt;/p&gt;
-&lt;p&gt;However, the goal of Spring Functions Catalog is not only to feed Stream Applications.
-Because all of them are independent artifacts of an auto-configuration for a single &lt;code&gt;Supplier&lt;/code&gt;, &lt;code&gt;Function&lt;/code&gt; or &lt;code&gt;Consumer&lt;/code&gt; with specific job to do, these functions can simply be added into classpath and used in the target project as-is or composed with other tasks.
-Most of these functions provide an auto-configuration for specific Spring Integration &lt;a href=&quot;https://docs.spring.io/spring-integration/reference/endpoint-summary.html#endpoint-summary&quot;&gt;Channel Adapter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here are just a few examples:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;the &lt;code&gt;sftpSupplier&lt;/code&gt; connects to a SFTP server and polls files from a remote directory and &quot;supplies&quot; the files to your application&lt;/li&gt;
-&lt;li&gt;the &lt;code&gt;kafkaPublisher&lt;/code&gt; (the &lt;code&gt;java.util.function.Consumer&lt;/code&gt; implementation) produces records into an Apache Kafka topic&lt;/li&gt;
-&lt;li&gt;the &lt;code&gt;aggregatorFunction&lt;/code&gt; groups multiple inputs into one according to some correlation key&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;After being auto-configured into the &lt;code&gt;ApplicationContext&lt;/code&gt;, these function can be injected into to the target service and composed with plain Java API (see &lt;code&gt;Function.andThen(Function)&lt;/code&gt;).
-However, better (and more natural for Spring applications) way is to use &lt;a href=&quot;https://spring.io/projects/spring-cloud-function&quot;&gt;Spring Cloud Function&lt;/a&gt; project capabilities.
-For example, the &lt;code&gt;FunctionFlowBuilder&lt;/code&gt; from &lt;a href=&quot;https://docs.spring.io/spring-cloud-function/docs/current/reference/html/spring-integration.html#spring-integration&quot;&gt;Spring Cloud Function Integration&lt;/a&gt; module can be used to compose an &lt;code&gt;IntegrationFlow&lt;/code&gt; for any complex solution.
-Another way is to compose them by names via &lt;code&gt;spring.cloud.function.definition&lt;/code&gt; configuration property.&lt;/p&gt;
-&lt;p&gt;As a proof of concept the &lt;a href=&quot;https://github.com/spring-cloud/spring-functions-catalog/tree/main/samples/time-spel-log&quot;&gt;time-spel-log&lt;/a&gt; sample in the project repository has these dependencies:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-groovy&quot;&gt;implementation &apos;org.springframework.cloud.fn:spring-time-supplier&apos;
-implementation &apos;org.springframework.cloud.fn:spring-spel-function&apos;
-implementation &apos;org.springframework.cloud.fn:spring-log-consumer&apos;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;application.yml&lt;/code&gt; has this property:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-yaml&quot;&gt;spring:
-  cloud:
-    function:
-      definition: timeSupplier|spelFunction|logConsumer
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The application logic is just like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Scheduled(fixedDelay = 1000)
-void scheduleFunctionCall() {
-  this.composedFunction.run();
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Where &lt;code&gt;composedFunction&lt;/code&gt; is a &lt;code&gt;Runnable&lt;/code&gt; from &lt;code&gt;FunctionCatalog&lt;/code&gt; and it is that mentioned above composition in the &lt;code&gt;application.yml&lt;/code&gt;.
-The application emits into logs the current time after some transformation every second.&lt;/p&gt;
-&lt;p&gt;Give Spring Functions Catalog a shot, and any feedback or contribution are welcome!&lt;/p&gt;
-&lt;p&gt;From here we are heading for &lt;code&gt;RC1&lt;/code&gt; in the end of March and &lt;code&gt;GA&lt;/code&gt; in April.&lt;/p&gt;
-&lt;p&gt;See more information in &lt;a href=&quot;https://github.com/spring-cloud/spring-functions-catalog&quot;&gt;GitHub repository&lt;/a&gt; for Spring Functions Catalog.&lt;/p&gt;
-&lt;p&gt;Cheers, +
-Artem&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Bootiful Podcast: Roni Dover on Digma AI]]></title><link>https://spring.io/blog/2024/02/29/a-bootiful-podcast-roni-dover-on-digma-ai</link><guid isPermaLink="true">https://spring.io/blog/2024/02/29/a-bootiful-podcast-roni-dover-on-digma-ai</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Thu, 29 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this installment we talk to Digma AI founder Roni Dover&lt;/p&gt;
-&lt;iframe title=&quot;Roni Dover on Digma AI&quot; allowtransparency=&quot;true&quot; height=&quot;150&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:150px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?i=dgctj-15985cd-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=7&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Spring Tips: the Spring Authorization Server: securing SPAs and messaging flows]]></title><link>https://spring.io/blog/2024/02/28/spring-tips-the-spring-authorization-server-securing-spas-and-messaging</link><guid isPermaLink="true">https://spring.io/blog/2024/02/28/spring-tips-the-spring-authorization-server-securing-spas-and-messaging</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;hi, Spring fans! In this installment, we continue our look at the venerable Spring Authorization Server, this time looking at how to extend its use beyond just HTTP APIs, to secure single page applications and messaging flows with OAuth.&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/p3aLjH2VPzU?si=wfTWGituj_bjA-Pz&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;</content:encoded></item></channel></rss>
+Juergen&lt;/p&gt;</content:encoded></item></channel></rss>
