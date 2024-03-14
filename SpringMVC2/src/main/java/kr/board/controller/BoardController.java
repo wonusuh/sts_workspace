@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.board.entity.Board;
 import kr.board.mapper.BoardMapper;
 
-@RequestMapping("/board")
+@RequestMapping("/boards")
 @RestController // @ResponseBody(JSON)응답
 public class BoardController {
 
@@ -36,25 +36,30 @@ public class BoardController {
 
 	// @RequestMapping("/boardInsert.do")
 	@PostMapping("/new")
-	public void boardInsert(Board vo) {
+	public String boardInsert(@RequestBody Board board) {
 		// System.out.println("vo = " + vo );
-		boardMapper.boardInsert(vo); // 등록성공
+		String msg = board.toString();
+		int result = boardMapper.boardInsert(board); // 등록성공
+		return result == 1 ? "게시글 추가 완료." + msg : "게시글 추가 실패." + msg;
 	}
 
 	@DeleteMapping("/{idx}")
-	public void boardDelete(@PathVariable("idx") int idx) {
-		boardMapper.boardDelete(idx);
+	public String deleteOneBoard(@PathVariable("idx") int idx) {
+		int result = boardMapper.deleteOneBoard(idx);
+		return result == 1 ? "성공" : "실패";
 	}
 
 	@PutMapping("/update")
-	public void boardUpdate(@RequestBody Board vo) {
-		boardMapper.boardUpdate(vo);
+	public String boardUpdate(@PathVariable int idx, Board board) {
+		board.setIdx(idx);
+		int result = boardMapper.boardUpdate(board);
+		return result == 1 ? "성공" : "실패";
 	}
 
 	@GetMapping("/{idx}")
 	public Board boardContent(@PathVariable("idx") int idx) {
-		Board vo = boardMapper.boardContent(idx);
-		return vo; // vo->JSON
+		Board board = boardMapper.boardContent(idx);
+		return board; // vo -> JSON
 	}
 
 	@PutMapping("/count/{idx}")

@@ -15,13 +15,13 @@
 		select * from myboard where idx=#{idx}
 	</select>
 
-	<delete id="boardDelete" parameterType="int">
+	<delete id="deleteOneBoard" parameterType="int">
 		delete from myboard where idx=#{idx}
 	</delete>
 
 	<update id="boardUpdate" parameterType="kr.board.entity.Board">
 		update myboard set title=#{title}, content=#{content}
-		where idx=#{idx}
+		where idx=#{idx};
 	</update>
 
 </mapper>

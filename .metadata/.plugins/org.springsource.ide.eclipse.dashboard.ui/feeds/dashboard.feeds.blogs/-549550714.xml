@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 Mar 2024 00:49:26 GMT</lastBuildDate><item><title><![CDATA[This Week in Spring - March 12th, 2024]]></title><link>https://spring.io/blog/2024/03/13/this-week-in-spring-march-12th-2024</link><guid isPermaLink="true">https://spring.io/blog/2024/03/13/this-week-in-spring-march-12th-2024</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! And what a week it&apos;s going to be!&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 Mar 2024 17:40:38 GMT</lastBuildDate><item><title><![CDATA[Spring Tips: Spring Batch Remote Partitioning, your easy button for data scale!]]></title><link>https://spring.io/blog/2024/03/13/spring-tips-spring-batch-remote-partitioning-your-easy-button-for-data-scale</link><guid isPermaLink="true">https://spring.io/blog/2024/03/13/spring-tips-spring-batch-remote-partitioning-your-easy-button-for-data-scale</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/dmdkJ3ZmT5E?si=Bk62Hu7AFLUr7uIU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi, Spring fans! In this installment, Spring Developer Advocate Josh Long looks at how to use Spring Batch&apos;s remote partitioning support to easy-button your data processing scale out strategies.&lt;/p&gt;
+&lt;p&gt;#postgresql #ai #datascience #data #springboot #java #java21&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring Tools 4.22.0 released]]></title><link>https://spring.io/blog/2024/03/13/spring-tools-4-22-0-released</link><guid isPermaLink="true">https://spring.io/blog/2024/03/13/spring-tools-4-22-0-released</guid><dc:creator><![CDATA[Martin Lippert]]></dc:creator><pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.22.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
+&lt;h4 id=&quot;important-highlights&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#important-highlights&quot; aria-label=&quot;important highlights permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;important highlights&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; &lt;strong&gt;Add Spring Boot Starters...&lt;/strong&gt; InlayHint in Spring Boot projects &lt;code&gt;pom.xml&lt;/code&gt; next to &lt;code&gt;&amp;#x3C;dependencies&gt;&lt;/code&gt; tag (VSCode only at the moment)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; early TestJars support &lt;a href=&quot;https://github.com/spring-projects/sts4/issues/1197&quot;&gt;#1197&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: Spring Tool Suite 17 with maven no longer copies application.properties file to the target folder &lt;a href=&quot;https://github.com/spring-projects/sts4/issues/929&quot;&gt;#929&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;updates-to-the-spring-tools-4-for-eclipse-distribution&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#updates-to-the-spring-tools-4-for-eclipse-distribution&quot; aria-label=&quot;updates to the spring tools 4 for eclipse distribution permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;updates to the Spring Tools 4 for Eclipse distribution&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;updated to Eclipse 2024-03 release (&lt;a href=&quot;https://eclipseide.org/release/noteworthy/&quot;&gt;new and noteworthy&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found in the release notes: &lt;a href=&quot;https://github.com/spring-projects/sts4/releases/tag/4.22.0.RELEASE&quot;&gt;https://github.com/spring-projects/sts4/releases/tag/4.22.0.RELEASE&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;downloads&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#downloads&quot; aria-label=&quot;downloads permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;downloads&lt;/h4&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring Tools 4: &lt;a href=&quot;https://spring.io/tools/&quot;&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Spring Tools 4.22.1 is scheduled to be released in early May 2024.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[This Week in Spring - March 12th, 2024]]></title><link>https://spring.io/blog/2024/03/13/this-week-in-spring-march-12th-2024</link><guid isPermaLink="true">https://spring.io/blog/2024/03/13/this-week-in-spring-march-12th-2024</guid><dc:creator><![CDATA[Josh Long]]></dc:creator><pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! And what a week it&apos;s going to be!&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Do this first&lt;/strong&gt;: we need your help! Please answer some questions in &lt;a href=&quot;https://spring.io/blog/2024/03/05/the-state-of-spring-survey-is-back&quot;&gt;our &lt;em&gt;State of Spring&lt;/em&gt; survey!&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Join me for a look at the latest-and-greatest, chronicling &lt;a href=&quot;https://spring.io/blog/2024/03/11/bootiful-spring-boot-in-2024-part-1&quot;&gt;how I got started with Spring Boot in 2024&lt;/a&gt;!&lt;/li&gt;
@@ -64,7 +85,7 @@ Spring, and it&apos;s been amazing.&lt;/p&gt;
 &lt;p&gt;But this is the best time. It&apos;s never been close. So, let&apos;s develop a
 new application, as always, by visiting my second favorite place on the
 internet, after production,
-&lt;code&gt;start.spring.io&lt;/code&gt;[&lt;a href=&quot;https://start.spring.io&quot;&gt;https://start.spring.io&lt;/a&gt;], and we&apos;ll see what I
+&lt;a href=&quot;https://start.spring.io&quot;&gt;&lt;code&gt;start.spring.io&lt;/code&gt;&lt;/a&gt;, and we&apos;ll see what I
 mean. Click &lt;code&gt;Add Dependencies&lt;/code&gt; and choose &lt;code&gt;Web&lt;/code&gt;, &lt;code&gt;Spring Data JDBC&lt;/code&gt;,
 &lt;code&gt;OpenAI&lt;/code&gt;, &lt;code&gt;GraalVM Native Support&lt;/code&gt;, &lt;code&gt;Docker Compose&lt;/code&gt;, &lt;code&gt;Postgres&lt;/code&gt;, and
 &lt;code&gt;Devtools&lt;/code&gt;.&lt;/p&gt;
@@ -95,20 +116,18 @@ world. Use Java 21.&lt;/p&gt;
 &lt;p&gt;I&apos;m using IntelliJ IDEA, and it installs a command-line tool called
 &lt;code&gt;idea&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;cd service
-idea build.gradlew
+idea build.gradle 
 # idea pom.xml if you&apos;re using Apache Maven
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you&apos;re using Visual Studio Code, be sure to install the &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack&quot;&gt;&lt;em&gt;Spring Boot
-Extension
-Pack&lt;/em&gt;&lt;/a&gt;
+Extension Pack&lt;/em&gt;&lt;/a&gt;
 on the &lt;em&gt;Visual Studio Code Marketplace&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;This new application is going to be talking to a database; it&apos;s a
 data-centric application. On the &lt;em&gt;Spring Initializr&lt;/em&gt;, we added support
 for PostgreSQL, but now we need to connect to it. The last thing we want
 is a long &lt;code&gt;README.md&lt;/code&gt; with a section titled, &lt;em&gt;A Hundred Easy Steps to
 Development&lt;/em&gt;. We want to live that &lt;em&gt;`git clone` &amp;#x26; Run&lt;/em&gt; life!&lt;/p&gt;
-&lt;p&gt;To that end, the Spring Initializr generated a &lt;a href=&quot;https://github.com/docker/compose&quot;&gt;Docker
-Compose&lt;/a&gt; &lt;code&gt;compose.yml&lt;/code&gt; file that
+&lt;p&gt;To that end, the Spring Initializr generated a &lt;a href=&quot;https://github.com/docker/compose&quot;&gt;Docker Compose&lt;/a&gt; &lt;code&gt;compose.yml&lt;/code&gt; file that
 contains a definition for Postgres, the amazing SQL database.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;the Docker Compose file, &lt;code&gt;compose.yaml&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-yaml&quot;&gt;services:
@@ -162,9 +181,7 @@ innocuous little &lt;code&gt;record&lt;/code&gt; isn&apos;t just a better way to
 Lombok&apos;s &lt;code&gt;@Data&lt;/code&gt; annotation does, it&apos;s actually part of a handful of
 features that, culminating in Java 21 and taken together, support
 something called &lt;em&gt;data-oriented programming&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Java language architect Brian Goetz talks about this in his &lt;a href=&quot;https://www.infoq.com/articles/data-oriented-programming-java/&quot;&gt;InfoQ
-article on Data-Oriented
-Programming&lt;/a&gt;
+&lt;p&gt;Java language architect Brian Goetz talks about this in his &lt;a href=&quot;https://www.infoq.com/articles/data-oriented-programming-java/&quot;&gt;InfoQ article on Data-Oriented Programming&lt;/a&gt;
 in 2022.&lt;/p&gt;
 &lt;p&gt;Java has dominated the world of the monolith, the reasoning goes,
 because of its strong access control, good and quick compiler, privacy
@@ -172,8 +189,7 @@ protections, and so on. Java makes it easy to create relatively modular,
 composable, monolithic applications. Monolithic applications are
 typically large, sprawling codebases, and Java supports it. Indeed, if
 you want modularity and want to structure your large monolithic codebase
-well, check out the &lt;a href=&quot;https://spring.io/projects/spring-modulith&quot;&gt;Spring
-Modulith&lt;/a&gt; project.&lt;/p&gt;
+well, check out the &lt;a href=&quot;https://spring.io/projects/spring-modulith&quot;&gt;Spring Modulith&lt;/a&gt; project.&lt;/p&gt;
 &lt;p&gt;But things have changed. These days, the vector by which we express
 change in a system these days is &lt;em&gt;not&lt;/em&gt; the specialized implementations
 of deep-seated hierarchies of abstract types (through dynamic dispatch
@@ -356,8 +372,7 @@ vector database to support similarity searches. And you&apos;ll want to then
 integrate with an LLM, giving it data from that vector database.&lt;/p&gt;
 &lt;p&gt;Sure, there are client bindings for any of the LLMs that you could
 possibly want - &lt;a href=&quot;https://docs.aws.amazon.com/bedrock/&quot;&gt;Amazon Bedrock&lt;/a&gt;,
-&lt;a href=&quot;https://azure.microsoft.com/en-us/products/ai-services/openai-service&quot;&gt;Azure
-OpenAI&lt;/a&gt;,
+&lt;a href=&quot;https://azure.microsoft.com/en-us/products/ai-services/openai-service&quot;&gt;Azure OpenAI&lt;/a&gt;,
 &lt;a href=&quot;https://cloud.google.com/vertex-ai/docs/reference/rest&quot;&gt;Google Vertex&lt;/a&gt;
 &lt;em&gt;and&lt;/em&gt; &lt;a href=&quot;https://ai.google.dev/docs/gemini_api_overview&quot;&gt;Google Gemini&lt;/a&gt;,
 &lt;a href=&quot;https://ollama.com&quot;&gt;Ollama&lt;/a&gt;, &lt;a href=&quot;https://huggingface.co&quot;&gt;HuggingFace&lt;/a&gt;, and
@@ -388,8 +403,7 @@ representations and lets you query for similar things.&lt;/p&gt;
 &lt;p&gt;This whole process of ingesting, enriching, analyzing and digesting data
 to inform the response from an LLM is called &lt;strong&gt;Retrieval Augmented
 Generation&lt;/strong&gt; (RAG), Spring AI supports all of it. For more, see this
-&lt;a href=&quot;https://www.youtube.com/watch?v=aNKDoiOUo9M&quot;&gt;Spring Tips video I did on Spring
-AI&lt;/a&gt;. We&apos;re not going to
+&lt;a href=&quot;https://www.youtube.com/watch?v=aNKDoiOUo9M&quot;&gt;Spring Tips video I did on Spring AI&lt;/a&gt;. We&apos;re not going to
 leverage all these capabilities here, however. Just one.&lt;/p&gt;
 &lt;p&gt;We added &lt;code&gt;OpenAI&lt;/code&gt; support on the Spring Initializr so Spring AI is
 already on the classpath. Add a new controller, like this:&lt;/p&gt;
@@ -455,7 +469,7 @@ look at the story it generated! It&apos;s a work of art.&lt;/p&gt;
 applications. Behind the scenes when we make a call to our LLM, we&apos;re
 making a network call. Somewhere, deep in the bowels of the code,
 there&apos;s a &lt;code&gt;java.net.Socket&lt;/code&gt; from which we&apos;ve obtained a
-&lt;code&gt;java.io.InputStream&lt;/code&gt; that represents the &lt;code&gt;byte[]&lt;/code&gt; data coming from the
+&lt;code&gt;java.io.InputStream&lt;/code&gt; that represents the &lt;code&gt;byte&lt;/code&gt; array of data coming from the
 service. I don&apos;t know if you remember using &lt;code&gt;InputStream&lt;/code&gt; directly.
 Here&apos;s an example:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;    try (var is = new FileInputStream(&quot;afile.txt&quot;)) {
@@ -498,13 +512,12 @@ complex Java NIO library. This is an option, in the same way that living
 with a family of skunks is an option: it stinks! Most of us don&apos;t think
 in terms of non-blocking IO, or regular IO, anyway. We live at higher
 rungs on the abstraction ladder. We could use reactive programming. I
-&lt;em&gt;love&lt;/em&gt; reactive programming. I even wrote a book about it - &lt;em&gt;Reactive
-Spring&lt;/em&gt;[&lt;a href=&quot;https://reactivespring.io&quot;&gt;https://reactivespring.io&lt;/a&gt;]. But it&apos;s not exactly obvious how
+&lt;em&gt;love&lt;/em&gt; reactive programming. I even wrote a book about it -  &lt;a href=&quot;https://reactivespring.io&quot;&gt;&lt;em&gt;Reactive
+Spring&lt;/em&gt;&lt;/a&gt;. But it&apos;s not exactly obvious how
 to make that work if you&apos;re not used to thinking like a functional
 programmer. It&apos;s a different paradigm and implies a rewrite of your
 code.&lt;/p&gt;
-&lt;p&gt;What if we could have our non-blocking cake and eat it too? With &lt;a href=&quot;https://openjdk.org&quot;&gt;Java
-21&lt;/a&gt;, now we can! There&apos;s a new feature called
+&lt;p&gt;What if we could have our non-blocking cake and eat it too? With &lt;a href=&quot;https://openjdk.org&quot;&gt;Java 21&lt;/a&gt;, now we can! There&apos;s a new feature called
 virtual threads that makes this stuff a ton easier! If you do something
 blocking on one of these new &lt;em&gt;virtual threads&lt;/em&gt;, the runtime will detect
 that you&apos;re doing a blocking thing - like &lt;code&gt;java.io.InputStream.read&lt;/code&gt;,
@@ -609,8 +622,7 @@ use in parts of the system. Spring Boot will pull that in and defer to
 it instead. Easy enough. But if you&apos;re using Spring Boot 3.2 You are,
 surely, using Spring Boot 3.2, right? You realize that each release is
 only support for like a year, right? Make sure to check out an given
-&lt;a href=&quot;https://spring.io/projects/spring-boot#support&quot;&gt;Spring projects&apos; support
-policy&lt;/a&gt;. If you are
+&lt;a href=&quot;https://spring.io/projects/spring-boot#support&quot;&gt;Spring projects&apos; support policy&lt;/a&gt;. If you are
 using 3.2, then you need only add one property to
 &lt;code&gt;application.properties&lt;/code&gt; and we&apos;ll plugin the virtual thread support for
 you.&lt;/p&gt;
@@ -632,22 +644,20 @@ possible. Here, my friends, there are a couple of things we need to
 consider. First of all, how do we containerize the application? Simple.
 Use &lt;a href=&quot;https://buildpacks.io&quot;&gt;Buildpacks&lt;/a&gt;. Easy. Remember, friends don&apos;t
 let friends write Dockerfiles. Use Buildpacks. They&apos;re supported out of
-the box with Spring Boot, too: &lt;code&gt;./gradlew buildBootImage&lt;/code&gt; or
+the box with Spring Boot, too: &lt;code&gt;./gradlew bootBuildImage&lt;/code&gt; or
 &lt;code&gt;./mvnw spring-boot:build-image&lt;/code&gt;. This isn&apos;t new though, so next
 question.&lt;/p&gt;
 &lt;p&gt;How do we get this thing to be as efficient and optimized as possible?
 And before we dive into this, my friends, it&apos;s important to remember
-that Java is already very very very efficient. I love &lt;a href=&quot;https://thenewstack.io/which-programming-languages-use-the-least-electricity/&quot;&gt;this
-blog&lt;/a&gt;
+that Java is already very very very efficient. I love &lt;a href=&quot;https://thenewstack.io/which-programming-languages-use-the-least-electricity/&quot;&gt;this blog&lt;/a&gt;
 from 2018, before the COVID pandemic, or &lt;em&gt;BC&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;It looks at which languages use the least energy, or are the most
 energy-efficient. C is the most energy-efficient. It uses the least
 electricity. 1.0. It&apos;s the baseline. It&apos;s efficient...? for &lt;strong&gt;MACHINES&lt;/strong&gt;.
 Not people! Definitely, &lt;em&gt;not&lt;/em&gt; people.&lt;/p&gt;
 &lt;p&gt;Then we have Rust and its zero-cost abstractions. Well done.&lt;/p&gt;
-&lt;p&gt;Then we have C++...?&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/gross.gif&quot; alt=&quot;gross&quot;&gt;&lt;/p&gt;
-&lt;p&gt;C++ is disgusting! Moving on...?&lt;/p&gt;
+&lt;p&gt;Then we have C++...   &lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/gross.gif&quot; alt=&quot;gross&quot;&gt;&lt;/p&gt;
+&lt;p&gt;C++ is disgusting! Moving on...&lt;/p&gt;
 &lt;p&gt;Then we have the Ada language, but.. who cares?&lt;/p&gt;
 &lt;p&gt;And then we have Java, which is nearly 2.0. Let&apos;s just round up and say
 2.0. Java is two times - twice! - as inefficient as C. Or one half as
@@ -671,8 +681,7 @@ the JVM. The JVM is an amazing piece of kit. Absolutely phenomenal.&lt;/p&gt;
 president when I first learned Python! But these numbers are &lt;em&gt;not&lt;/em&gt;
 great. Think about it. 75.88. Let&apos;s round up to 76. I&apos;m not great at
 math. But you know what is? Freakin&apos; Python! Let&apos;s ask it.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/python-doing-math.png&quot; alt=&quot;python doing
-math&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/python-doing-math.png&quot; alt=&quot;python doing math&quot;&gt;&lt;/p&gt;
 &lt;p&gt;38! That means that if you ran a program in Java, and the generation of
 the energy required to run it creates a bit of carbon that ends up
 trapped in the atmosphere, raising the temperature, and that heightened
@@ -685,14 +694,12 @@ think this is because of two things that people take for granted:
 garbage collection and the Just In Time (JIT) compiler.&lt;/p&gt;
 &lt;p&gt;Garbage collection, well we all know what it is. Heck, &lt;a href=&quot;https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf&quot;&gt;even the White
 House appreciates garbage-collected, memory-safe
-languages&lt;/a&gt;
-like Java in its recent report on securing software to secure the
+languages&lt;/a&gt; like Java in its recent report on securing software to secure the
 building blocks of cyberspace.&lt;/p&gt;
 &lt;p&gt;The Java programming language garbage collector lets us write mediocre
 software and sort of &lt;em&gt;get away&lt;/em&gt; with it. It&apos;s dope! That said, I do take
 issue with the notion that it is the &lt;em&gt;original&lt;/em&gt; Java garbage collector!
-That honor belongs elsewhere, like perhaps &lt;a href=&quot;https://twitter.com/jtannady/status/981547257479778307?lang=en&quot;&gt;with
-Jesslyn&lt;/a&gt;.&lt;/p&gt;
+That honor belongs elsewhere, like perhaps &lt;a href=&quot;https://twitter.com/jtannady/status/981547257479778307?lang=en&quot;&gt;with Jesslyn&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;And the JIT is another amazing piece of kit. It analyses frequently
 accessed code paths in your application and turns them into operating
 system and architecture-specific native code. It can only do this for
@@ -746,14 +753,13 @@ introduced in 3.0. The AOT engine analyses the beans in your Spring
 application and emits the requisite configuration files for you. Nice!
 There&apos;s even a whole component model that you can use that extends
 Spring to compile time. I won&apos;t get into all of that here, but you can
-read my &lt;a href=&quot;https://tanzu.vmware.com/content/white-papers/spring-boot-3&quot;&gt;free
-e-book&lt;/a&gt; or
+read my &lt;a href=&quot;https://tanzu.vmware.com/content/white-papers/spring-boot-3&quot;&gt;free e-book&lt;/a&gt; or
 watch my free YouTube video introducing all things &lt;a href=&quot;https://www.youtube.com/watch?v=TOfYlLjXufw&quot;&gt;Spring and
 AOT&lt;/a&gt;. It&apos;s basically the
 same content, just different ways to consume it.&lt;/p&gt;
 &lt;p&gt;So let&apos;s kick off that build with Gradle, &lt;code&gt;./gradlew nativeCompile&lt;/code&gt;, or
 &lt;code&gt;./mvnw -Pnative native:compile&lt;/code&gt; if you&apos;re using Apache Maven. You might
-want to skip tests on this one...? This build will take a little while.
+want to skip tests on this one...  This build will take a little while.
 Remember, it&apos;s doing an analysis of everything in your codebase - be it
 the libraries on the classpath, the JRE, and the classes in your code
 itself - to determine which types it should preserve and which it should
@@ -762,8 +768,7 @@ but at the cost of a very, &lt;em&gt;very&lt;/em&gt; slow compilation time.&lt;/
 &lt;p&gt;It takes so long, in fact, that it kinda just gums up my flow. It stops
 me dead in my tracks, waiting. I am like the platform threads from
 earlier on, in this very blog: &lt;em&gt;blocked&lt;/em&gt;! I get bored. Waiting. Waiting.
-I now finally understand this &lt;a href=&quot;https://xkcd.com/303/&quot;&gt;famous XKCD
-cartoon&lt;/a&gt;.&lt;/p&gt;
+I now finally understand this &lt;a href=&quot;https://xkcd.com/303/&quot;&gt;famous XKCD cartoon&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Sometimes I start to hum music. Or theme songs. Or elevator music. You
 know what &lt;a href=&quot;https://en.wikipedia.org/wiki/Elevator_music&quot;&gt;elevator music&lt;/a&gt;
 sounds like, right? Ceaseless, endless. So, I thought, wouldn&apos;t it be
@@ -795,7 +800,7 @@ niephaus&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Ok. But he did share this promising prototype!&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/joshlong-attic/bootiful-spring-boot-2024-blog/main/service/images/graalvm-prototype.png&quot; alt=&quot;graalvm
 prototype&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I&apos;m sure it&apos;ll get merged any day now...?&lt;/p&gt;
+&lt;p&gt;I&apos;m sure it&apos;ll get merged any day now...&lt;/p&gt;
 &lt;p&gt;Anyway! If you check the compilation, it should be done now. It&apos;s in the
 &lt;code&gt;./build/native/nativeCompile/&lt;/code&gt; folder, and it&apos;s called &lt;code&gt;service&lt;/code&gt;. On my
 machine, the compilation took 52 seconds. Yeesh!&lt;/p&gt;
@@ -820,12 +825,10 @@ obviously, it would be much faster still if I were using something like
 Spring Cloud Function to build AWS Lamba-style functions-as-a-service,
 because I wouldn&apos;t need for example to package an HTTP server. Indeed,
 if pure startup speed were &lt;em&gt;all&lt;/em&gt; that I really wanted, then I might even
-use Spring&apos;s amazing support for &lt;a href=&quot;https://www.youtube.com/watch?v=dMhpDdR6nHw&amp;#x26;t=2658s&quot;&gt;Project
-CRaC&lt;/a&gt;. That&apos;s
+use Spring&apos;s amazing support for &lt;a href=&quot;https://www.youtube.com/watch?v=dMhpDdR6nHw&amp;#x26;t=2658s&quot;&gt;Project CRaC&lt;/a&gt;. That&apos;s
 neither here no there. I don&apos;t really care all that much about that
 because this is a standalone, long-lived service. What I care about is
-the resource usage, as represented by the &lt;a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;&gt;Resident Set Size
-(RSS)&lt;/a&gt;. Note the process identifier
+the resource usage, as represented by the &lt;a href=&quot;https://en.wikipedia.org/wiki/RSS&quot;&gt;Resident Set Size (RSS)&lt;/a&gt;. Note the process identifier
 (PID) - it&apos;ll be in the logs. If the PID is, let&apos;s say, &lt;code&gt;55&lt;/code&gt;, then get
 the RSS like this using the &lt;code&gt;ps&lt;/code&gt; utility, available on virtually all
 Unixes:&lt;/p&gt;
@@ -850,8 +853,7 @@ Java and Spring developer. I hope I&apos;ve so persuaded you, too.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;https://jdconf.com/agenda.html#markp-session&quot;&gt;Spring AI: Streamlining Java Enterprise AI Development and Deployment&lt;/a&gt;, by Dr. Mark Pollack, Broadcom&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://jdconf.com/agenda.html#martinl-session&quot;&gt;How to Keep Your Spring Boot Projects Up-to-Date&lt;/a&gt;, by Martin Lippert, Broadcom&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;If you enjoyed this blog, I hope you&apos;ll subscribe to our &lt;a href=&quot;https://youtube.com/@springsourcedev&quot;&gt;YouTube
-channel&lt;/a&gt;, where I have new videos
+&lt;p&gt;If you enjoyed this blog, I hope you&apos;ll subscribe to our &lt;a href=&quot;https://youtube.com/@springsourcedev&quot;&gt;YouTube channel&lt;/a&gt;, where I have new videos
 every week in the &lt;a href=&quot;https://bit.ly/spring-tips-playlist&quot;&gt;&lt;em&gt;Spring Tips&lt;/em&gt;&lt;/a&gt;
 playlist. And, of course, you can find my &lt;a href=&quot;https://biodrop.io/joshlong&quot;&gt;Twitter/X, website, YouTube
 channel, books, Podcast, and much more here on
@@ -1020,205 +1022,4 @@ Then you can run the native executable:&lt;/p&gt;
 &lt;li&gt;I like this German-language article &lt;a href=&quot;https://www.innoq.com/de/blog/2024/02/ollama-llm-spring-ai-rag/&quot;&gt;on using a local LLM (Ollama) with Spring AI&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Friend of the community Marit van Dijk has a nice blog, &lt;a href=&quot;https://www.innoq.com/de/blog/2024/02/ollama-llm-spring-ai-rag/&quot;&gt;&lt;em&gt;Build a Spring Boot App with AI Assistant&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;This paper, &lt;a href=&quot;https://arxiv.org/pdf/2401.11867.pdf&quot;&gt;&lt;em&gt;Modular Monolith: Is This the Trend in Software Architecture?&lt;/em&gt;&lt;/a&gt;, is a good read and has a few different mentions of the fantastic &lt;a href=&quot;https://spring.io/projects/spring-modulith&quot;&gt;Spring Modulith project&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Spring Releases for February 2024]]></title><link>https://spring.io/blog/2024/03/04/spring-releases-for-february-2024</link><guid isPermaLink="true">https://spring.io/blog/2024/03/04/spring-releases-for-february-2024</guid><dc:creator><![CDATA[Jason Konicki]]></dc:creator><pubDate>Mon, 04 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the Spring team, we are excited to showcase all of the Spring projects that have been released this February.&lt;/p&gt;
-&lt;h2 id=&quot;spring-oss-releases&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#spring-oss-releases&quot; aria-label=&quot;spring oss releases permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Spring OSS Releases&lt;/h2&gt;
-&lt;p&gt;The table below contains a list of all the open source projects and their versions that have been released.  Each project listed will link to their version details.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Project&lt;/th&gt;
-&lt;th&gt;Version(s)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring AI&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/23/spring-ai-0-8-0-released&quot;&gt;0.8.0&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring for Apache Kafka&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/20/spring-for-apache-kafka-3-0-14-3-1-2-and-3-2-0-m1-available-now&quot;&gt;3.2.0-M1, 3.1.2, 3.0.14&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring for Apache Pulsar&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-for-apache-pulsar-1-1-0-m1-available-now&quot;&gt;1.1.0-M1&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/20/spring-for-apache-pulsar-1-0-3-available-now&quot;&gt;1.0.3&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Authorization Server&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-authorization-server-1-3-0-m2-available-now&quot;&gt;1.3.0-M2&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-authorization-server-1-2-2-and-1-1-5-available-now&quot;&gt;1.2.2, 1.1.5&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Batch&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-batch-5-0-5-and-5-1-1-available-now&quot;&gt;5.1.1, 5.0.5&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Boot&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/22/spring-boot-3-3-0-m2-available-now&quot;&gt;3.3.0-M2&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/22/spring-boot-3-2-3-available-now&quot;&gt;3.2.3&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/22/spring-boot-3-1-9-available-now&quot;&gt;3.1.9&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/16/first-milestone-of-spring-data-2024-0-0-available&quot;&gt;2024.0.0-M1&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/16/spring-data-2023-1-3-and-2023-0-9-available&quot;&gt;2023.1.3, 2023.0.9&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Framework&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/15/spring-framework-6-1-4-6-0-17-and-5-3-32-available-now&quot;&gt;6.1.4, 6.0.17, 5.3.32&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring for GraphQL&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-for-graphql-1-3-m1-released&quot;&gt;1.3-M1&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-for-graphql-1-2-5-released&quot;&gt;1.2.5&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring LDAP&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-ldap-3-1-4-and-3-2-2-are-available&quot;&gt;3.2.2, 3.1.4&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Modulith&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/23/spring-modulith-1-0-6-1-1-3-and-1-2-m2-released&quot;&gt;1.2-M2, 1.1.3, 1.0.6&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Security&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/21/spring-security-6-2-2-6-1-7-and-5-8-10-are-now-available&quot;&gt;6.2.2, 6.1.7, 5.8.10&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Shell&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/28/spring-shell-3-1-9-and-3-2-2-are-now-available&quot;&gt;3.2.2, 3.1.19&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Tools&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.io/blog/2024/02/08/spring-tools-4-21-1-released&quot;&gt;4.21.1&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Micrometer&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/micrometer-metrics/micrometer/releases/tag/v1.13.0-M1&quot;&gt;1.13.0-M1&lt;/a&gt;, &lt;a href=&quot;https://github.com/micrometer-metrics/micrometer/releases/tag/v1.12.3&quot;&gt;1.12.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/micrometer-metrics/micrometer/releases/tag/v1.11.9&quot;&gt;1.11.9&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Micrometer Tracing&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/micrometer-metrics/tracing/releases/tag/v1.3.0-M1&quot;&gt;1.3.0-M1&lt;/a&gt;, &lt;a href=&quot;https://github.com/micrometer-metrics/tracing/releases/tag/v1.2.3&quot;&gt;1.2.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/micrometer-metrics/tracing/releases/tag/v1.1.10&quot;&gt;1.1.10&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Reactor&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://github.com/reactor/reactor/releases/tag/2023.0.3&quot;&gt;2023.0.3&lt;/a&gt;, &lt;a href=&quot;https://github.com/reactor/reactor/releases/tag/2022.0.16&quot;&gt;2022.0.16&lt;/a&gt;, &lt;a href=&quot;https://github.com/reactor/reactor/releases/tag/2020.0.41&quot;&gt;2020.0.41&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;how-can-we-help&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#how-can-we-help&quot; aria-label=&quot;how can we help permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How can we help?&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://tanzu.vmware.com/spring-health-assessment&quot;&gt;Get a free Spring Health Assessment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://tanzu.vmware.com/spring-runtime#contact-form&quot;&gt;Talk to an expert&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.io/consulting&quot;&gt;Spring Consulting&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.academy/&quot;&gt;Spring Academy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;tanzu-spring-runtime-commercial-releases&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tanzu-spring-runtime-commercial-releases&quot; aria-label=&quot;tanzu spring runtime commercial releases permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tanzu Spring Runtime Commercial Releases&lt;/h2&gt;
-&lt;p&gt;Tanzu Spring Runtime commercial releases have been released and are now available on the Spring commercial artifact repository. These releases can be accessed by those with a &lt;a href=&quot;https://docs.vmware.com/en/Tanzu-Spring-Runtime/Commercial/Tanzu-Spring-Runtime/spring-commercial-subscription.html&quot;&gt;Spring Enterprise Subscription&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The table below contains a list of all the commercial artifacts and their versions that have been released.  Each project listed will link to their commercial page which includes their changelog and reference documentation.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Project&lt;/th&gt;
-&lt;th&gt;Version(s)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Authorization Server&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-authorization-server&quot;&gt;1.0.5&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Boot&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-boot&quot;&gt;3.0.15, 2.7.20&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Cloud&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud&quot;&gt;2022.0.6&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Cloud Config&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud-config&quot;&gt;4.0.6&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Cloud Contract&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud-contract&quot;&gt;4.0.6&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Cloud Netflix&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud-netflix&quot;&gt;4.0.5&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Cloud Vault&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-cloud-vault&quot;&gt;4.0.3&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data Cassandra&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-cassandra&quot;&gt;4.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data Commons&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-commons&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data JPA&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-jpa&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data LDAP&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-ldap&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data MongoDB&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-mongodb&quot;&gt;4.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data Redis&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-redis&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data Relational&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-relational&quot;&gt;3.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Data REST&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-data-rest&quot;&gt;4.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Integration&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-integration&quot;&gt;6.0.10&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring LDAP&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-ldap&quot;&gt;3.0.7&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Security&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-security&quot;&gt;6.0.9&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Session&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-session&quot;&gt;3.0.5&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spring Shell&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/spring-shell&quot;&gt;3.0.12, 2.1.16&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Micrometer&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/micrometer&quot;&gt;1.10.14&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Micrometer Tracing&lt;/td&gt;
-&lt;td&gt;&lt;a href=&quot;https://spring.vmware.com/projects/micrometer-tracing&quot;&gt;1.0.13&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;learn-more-about-tanzu-spring-runtime&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#learn-more-about-tanzu-spring-runtime&quot; aria-label=&quot;learn more about tanzu spring runtime permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Learn more about Tanzu Spring Runtime&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://spring.vmware.com/&quot;&gt;Why Tanzu Spring Runtime?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.vmware.com/en/Tanzu-Spring-Runtime/Commercial/Tanzu-Spring-Runtime/index.html&quot;&gt;Tanzu Spring Runtime Reference Documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://docs.vmware.com/en/Tanzu-Spring-Runtime/Commercial/Tanzu-Spring-Runtime/spring-commercial-subscription.html&quot;&gt;Spring Enterprise Subscription&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Support timeline announcement for Spring Framework 6.0.x and 5.3.x]]></title><link>https://spring.io/blog/2024/03/01/support-timeline-announcement-for-spring-framework-6-0-x-and-5-3-x</link><guid isPermaLink="true">https://spring.io/blog/2024/03/01/support-timeline-announcement-for-spring-framework-6-0-x-and-5-3-x</guid><dc:creator><![CDATA[Juergen Hoeller]]></dc:creator><pubDate>Fri, 01 Mar 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Dear Spring community,&lt;/p&gt;
-&lt;p&gt;As we are preparing for the Spring Framework 6.2 release later this year, it is time to phase out not only the 6.0.x branch but also the 5.3.x line.&lt;/p&gt;
-&lt;p&gt;We hereby announce that the last 6.0.x and 5.3.x releases will be published in August, with the official end of open source support on August 31, 2024.  Along with Spring Framework 5.3.x, the Spring Security project makes the same adjustment for its 5.8.x timeline.&lt;/p&gt;
-&lt;p&gt;The Spring Framework 5.3.x line has been one of the longest-supported branches in Spring&apos;s history and keeps being supported under commercial support terms for another couple of years. You can read more about our commercial releases at &lt;a href=&quot;https://spring.vmware.com&quot;&gt;https://spring.vmware.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;With Spring Boot 2.7.x having reached its end of open source support already, we decided to align the last 5.3.x release with the end of the 6.0.x line. If you have not done so already, please plan your upgrade path to 6.1.x at your earliest convenience.&lt;/p&gt;
-&lt;p&gt;The team will focus on Spring Framework 6.2 now, with a first milestone coming up and a release candidate planned for September; more on this soon.&lt;/p&gt;
-&lt;p&gt;Cheers,
-Juergen&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item></channel></rss>

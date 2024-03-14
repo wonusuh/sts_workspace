@@ -59,6 +59,7 @@ public class MemberController {
 			rttr.addFlashAttribute("msg", "비밀번호가 서로 다릅니다.");
 			return "redirect:/member/memJoin.do"; // ${msgType} , ${msg}
 		}
+		m.setMemPassword(memPassword2);
 		m.setMemProfile(""); // 사진이미는 없다는 의미 ""
 		// 회원을 테이블에 저장하기
 		int result = memberMapper.register(m);
@@ -118,9 +119,21 @@ public class MemberController {
 
 	// 회원정보수정
 	@RequestMapping("/memUpdate.do")
-	public String memUpdate(Member m, RedirectAttributes rttr, String memPassword1, String memPassword2,
-			HttpSession session) {
+	public String memUpdate(@ModelAttribute Member m, RedirectAttributes rttr, @RequestParam String memPassword1,
+			String memPassword2, HttpSession session) {
 		// 실습
+		if (!m.nullValueCheck()) {
+			rttr.addFlashAttribute("msgType", "실패 메시지");
+			rttr.addFlashAttribute("msg", "모든 값을 넣어주세요.");
+			return "redirect:/member/memUpdateForm.do";
+		}
+		if (memPassword1 != memPassword2) {
+			System.out.println("pw1 과 pw2 를 확인하세요.");
+			return "redirect:/member/memUpdateForm.do";
+		}
+		System.out.println(m.toString());
+		memberMapper.memUpdate(m);
+		session.setAttribute("mvo", m);
 		return "redirect:/";
 	}
 }

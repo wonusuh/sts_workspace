@@ -58,5 +58,9 @@ function goInsert() {
 
 function goUpdate() {
 	// 실습
+	let form = document.forms['updateForm'];
+	if (form.memAge.value < 0 || form.memAge.value > 200) {
+		return alert(' 올바른 나이를 입력해주세요. ');
+	}
+	form.submit();
 }
-  

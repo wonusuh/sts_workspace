@@ -156,6 +156,7 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- json 형식으로 자동으로 바꿔줌 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>

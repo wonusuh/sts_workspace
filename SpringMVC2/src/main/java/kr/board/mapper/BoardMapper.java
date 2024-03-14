@@ -11,14 +11,14 @@ import kr.board.entity.Board;
 public interface BoardMapper {
 	public List<Board> getLists();
 
-	public void boardInsert(Board vo);
+	public int boardInsert(Board board);
 
 	public Board boardContent(int idx);
 
-	public void boardDelete(int idx);
+	public int deleteOneBoard(int idx);
 
-	public void boardUpdate(Board vo);
+	public int boardUpdate(Board board);
 
-	@Update("update myboard set count=count+1 where idx=#{idx}")
+	@Update("update myboard set count = count + 1 where idx = #{idx}")
 	public void boardCount(int idx);
 }
