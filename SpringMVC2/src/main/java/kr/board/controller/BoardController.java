@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,8 +36,8 @@ public class BoardController {
 
 	// @RequestMapping("/boardInsert.do")
 	@PostMapping("/new")
-	public String boardInsert(@RequestBody Board board) {
-		// System.out.println("vo = " + vo );
+	public String boardInsert(@ModelAttribute Board board) {
+		System.out.println("board = " + board);
 		String msg = board.toString();
 		int result = boardMapper.boardInsert(board); // 등록성공
 		return result == 1 ? "게시글 추가 완료." + msg : "게시글 추가 실패." + msg;

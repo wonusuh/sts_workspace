@@ -1,28 +1,27 @@
 let memID = '';
-function loadData(mvoID){
-     memID = mvoID;
-	loadList();
+function loadData(mvoID) {
+  memID = mvoID;
+  loadList();
 }
 
 function loadList() {
-    fetch("boards/all")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            return response.json();
-        })
-        .then(data => makeView(data, memID))
-        .catch(error => {
-            console.error("Error occurred while processing the request:", error);
-        });
+  fetch("boards/all")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => makeView(data, memID))
+    .catch(error => {
+      console.error("Error occurred while processing the request:", error);
+    });
 }
 
-function makeView(data,memID) {
-
-    const view = document.querySelector("#view");
-    const wfrom = document.querySelector("#wfrom");
-    let listHtml = `
+function makeView(data, memID) {
+  const view = document.querySelector("#view");
+  const wfrom = document.querySelector("#wfrom");
+  let listHtml = `
         <table class='table table-bordered'>
             <tr>
                 <td>번호</td>
@@ -32,12 +31,12 @@ function makeView(data,memID) {
                 <td>조회수</td>
             </tr>
     `
-    
-    console.log("data=" , data);
 
-    data.forEach(obj => {
-        console.log("obj=" ,obj);
-        listHtml += `
+  console.log("data=", data);
+
+  data.forEach(obj => {
+    console.log("obj=", obj);
+    listHtml += `
             <tr>
                 <td>${obj.idx}</td>
                 <td id='t${obj.idx}'><a href='javascript:goContent(${obj.idx})'>${obj.title}</a></td>
@@ -52,133 +51,133 @@ function makeView(data,memID) {
                     <br/>
         `;
 
-        if (memID!='' && memID === obj.memID) {
-            listHtml += `
+    if (memID != '' && memID === obj.memID) {
+      listHtml += `
                 <span id='ub${obj.idx}'><button class='btn btn-success btn-sm' onclick='javascript:goUpdateForm(${obj.idx})'>수정화면</button></span>&nbsp;
                 <button class='btn btn-warning btn-sm' onclick='goDelete(${obj.idx})'>삭제</button>
             `;
-        } else {
-            listHtml += `
+    } else {
+      listHtml += `
                 <span id='ub${obj.idx}'><button disabled class='btn btn-success btn-sm' onclick='javascript:goUpdateForm(${obj.idx})'>수정화면</button></span>&nbsp;
                 <button disabled class='btn btn-warning btn-sm' onclick='goDelete(${obj.idx})'>삭제</button>
             `;
-        }
+    }
 
-        listHtml += `
+    listHtml += `
                 </td>
             </tr>
         `;
-    });
-// 로그인을 해야 보이는 부분
-    if (memID!='') {
-        listHtml += `
+  });
+  // 로그인을 해야 보이는 부분
+  if (memID != '') {
+    listHtml += `
             <tr>
                 <td colspan='5'>
                     <button class='btn btn-primary btn-sm' onclick='goForm()'>글쓰기</button>
                 </td>
             </tr>
         `;
-    }
+  }
 
-    listHtml += "</table>";
-    view.innerHTML = listHtml;
-    view.style.display = "block";
-    wfrom.style.display = "none";
+  listHtml += "</table>";
+  view.innerHTML = listHtml;
+  view.style.display = "block";
+  wfrom.style.display = "none";
 }
 
 function goForm() {
-    document.querySelector("#view").style.display = "none";
-    document.querySelector("#wfrom").style.display = "block";
+  document.querySelector("#view").style.display = "none";
+  document.querySelector("#wfrom").style.display = "block";
 }
 
 function goList() {
-    document.querySelector("#view").style.display = "block";
-    document.querySelector("#wfrom").style.display = "none";
+  document.querySelector("#view").style.display = "block";
+  document.querySelector("#wfrom").style.display = "none";
 }
 
 function goInsert() {
   let form = document.getElementById("frm");
-    fetch("board/new", {
-        method: "POST",
-        body: new URLSearchParams({ // 일반 객체를 fordata형식으로 변환해주는 클래스
-        memID: memID,
-        title: form.title.value,
-        content: form.content.value,
-        writer: form.writer.value
-   		 })
+  fetch("boards/new", {
+    method: "POST",
+    body: new URLSearchParams({ // 일반 객체를 form data형식으로 변환해주는 클래스
+      memID: memID,
+      title: form.title.value,
+      content: form.content.value,
+      writer: form.writer.value
     })
+  })
     .then(loadList)
     .catch(error => {
-        console.error("Error occurred while processing the request:", error);
+      console.error("Error occurred while processing the request:", error);
     });
 
-    document.querySelector("#fclear").click();
+  document.querySelector("#fclear").click();
 }
 
 function goContent(idx) {
-    const contentRow = document.querySelector(`#c${idx}`);
-    if (contentRow.style.display === "none") {
-        fetch(`board/${idx}`)
-            .then(response => response.json())
-            .then(data => {
-                document.querySelector(`#ta${idx}`).value = data.content;
-            })
-            .catch(error => {
-                console.error("Error occurred while processing the request:", error);
-            });
+  const contentRow = document.querySelector(`#c${idx}`);
+  if (contentRow.style.display === "none") {
+    fetch(`boards/${idx}`)
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector(`#ta${idx}`).value = data.content;
+      })
+      .catch(error => {
+        console.error("Error occurred while processing the request:", error);
+      });
 
-        contentRow.style.display = "table-row";
-        document.querySelector(`#ta${idx}`).readOnly = true;
-    } else {
-        contentRow.style.display = "none";
+    contentRow.style.display = "table-row";
+    document.querySelector(`#ta${idx}`).readOnly = true;
+  } else {
+    contentRow.style.display = "none";
 
-        fetch(`board/count/${idx}`, {
-            method: "PUT",
-        })
-        .then(response => response.json())
-        .then(data => {
-            document.querySelector(`#cnt${idx}`).textContent = data.count;
-        })
-        .catch(error => {
-            console.error("Error occurred while processing the request:", error);
-        });
-    }
+    fetch(`boards/count/${idx}`, {
+      method: "PUT",
+    })
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector(`#cnt${idx}`).textContent = data.count;
+      })
+      .catch(error => {
+        console.error("Error occurred while processing the request:", error);
+      });
+  }
 }
 
 function goDelete(idx) {
-    fetch(`board/${idx}`, {
-        method: "DELETE",
-    })
+  fetch(`boards/${idx}`, {
+    method: "DELETE",
+  })
     .then(loadList)
     .catch(error => {
-        console.error("Error occurred while processing the request:", error);
+      console.error("Error occurred while processing the request:", error);
     });
 }
 
 function goUpdateForm(idx) {
-    document.querySelector(`#ta${idx}`).readOnly = false;
+  document.querySelector(`#ta${idx}`).readOnly = false;
 
-    const title = document.querySelector(`#t${idx}`).textContent;
-    const newInput = `<input type='text' id='nt${idx}' class='form-control' value='${title}'/>`;
-    document.querySelector(`#t${idx}`).innerHTML = newInput;
+  const title = document.querySelector(`#t${idx}`).textContent;
+  const newInput = `<input type='text' id='nt${idx}' class='form-control' value='${title}'/>`;
+  document.querySelector(`#t${idx}`).innerHTML = newInput;
 
-    const newButton = `<button class='btn btn-primary btn-sm' onclick='goUpdate(${idx})'>수정</button>`;
-    document.querySelector(`#ub${idx}`).innerHTML = newButton;
+  const newButton = `<button class='btn btn-primary btn-sm' onclick='goUpdate(${idx})'>수정</button>`;
+  document.querySelector(`#ub${idx}`).innerHTML = newButton;
 }
 
 function goUpdate(idx) {
-    const title = document.querySelector(`#nt${idx}`).value;
-    const content = document.querySelector(`#ta${idx}`).value;
+  const title = document.querySelector(`#nt${idx}`).value;
+  const content = document.querySelector(`#ta${idx}`).value;
 
-    fetch("board/update", {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({ idx, title, content }),
-    })
+  fetch("boards/update", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+    body: JSON.stringify({ idx, title, content }),
+  })
     .then(loadList)
     .catch(error => {
-        console.error("Error occurred while processing the request:", error);
+      console.error("Error occurred while processing the request:", error);
     });
 }
