@@ -122,13 +122,16 @@ public class MemberController {
 	public String memUpdate(@ModelAttribute Member m, RedirectAttributes rttr, @RequestParam String memPassword1,
 			String memPassword2, HttpSession session) {
 		// 실습
+		System.out.println("pw1 : " + memPassword1);
+		System.out.println("pw2 : " + memPassword2);
+		if (!memPassword1.equals(memPassword2)) {
+			System.out.println("pw1 과 pw2 를 확인하세요.");
+			return "redirect:/member/memUpdateForm.do";
+		}
+		m.setMemPassword(memPassword2);
 		if (!m.nullValueCheck()) {
 			rttr.addFlashAttribute("msgType", "실패 메시지");
 			rttr.addFlashAttribute("msg", "모든 값을 넣어주세요.");
-			return "redirect:/member/memUpdateForm.do";
-		}
-		if (memPassword1 != memPassword2) {
-			System.out.println("pw1 과 pw2 를 확인하세요.");
 			return "redirect:/member/memUpdateForm.do";
 		}
 		System.out.println(m.toString());
